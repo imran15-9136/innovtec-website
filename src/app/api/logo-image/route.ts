@@ -1,35 +1,30 @@
-<svg width="500" height="110" viewBox="0 0 500 110" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Innovtec Official Brand Color #4E63B6 -->
-  <g fill="#4E63B6">
-    <!-- 'i' -->
-    <path d="M0 32H16V86H0V32Z" />
-    
-    <!-- 'n' (first) -->
-    <path d="M25 32H40V41.5C43.5 35 50.5 30.5 60.5 30.5C72 30.5 78.5 38 78.5 50.5V86H62.5V53C62.5 44.5 58.5 41.5 51.5 41.5C44 41.5 41 46.5 41 55V86H25V32Z" />
-    
-    <!-- 'n' (second) -->
-    <path d="M87 32H102V41.5C105.5 35 112.5 30.5 122.5 30.5C134 30.5 140.5 38 140.5 50.5V86H124.5V53C124.5 44.5 120.5 41.5 113.5 41.5C106 41.5 103 46.5 103 55V86H87V32Z" />
+import { NextResponse } from "next/server";
+import fs from "fs";
+import path from "path";
 
-    <!-- 'o' (Exact Concentric Radar Target Icon) -->
+// High-resolution SVG template matching exact Innovtec logo
+const svgContent = `<svg width="800" height="180" viewBox="0 0 500 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g fill="#4E63B6">
+    <path d="M0 32H16V86H0V32Z" />
+    <path d="M25 32H40V41.5C43.5 35 50.5 30.5 60.5 30.5C72 30.5 78.5 38 78.5 50.5V86H62.5V53C62.5 44.5 58.5 41.5 51.5 41.5C44 41.5 41 46.5 41 55V86H25V32Z" />
+    <path d="M87 32H102V41.5C105.5 35 112.5 30.5 122.5 30.5C134 30.5 140.5 38 140.5 50.5V86H124.5V53C124.5 44.5 120.5 41.5 113.5 41.5C106 41.5 103 46.5 103 55V86H87V32Z" />
     <g transform="translate(148, 28)">
-      <!-- Outer Ring with bottom-right break -->
       <path d="M 30 0 A 30 30 0 1 1 54 48 L 47 42 A 21 21 0 1 0 30 9 A 21 21 0 0 0 30 51 L 30 60 A 30 30 0 0 1 30 0 Z" />
-      <!-- Inner Ring with bottom-left break -->
       <path d="M 30 11 A 19 19 0 1 1 14 42 L 20 37 A 12 12 0 1 0 30 18 A 12 12 0 0 0 18 30 L 10 30 A 20 20 0 0 1 30 11 Z" />
-      <!-- Center Circle with Keyhole Notch -->
       <path d="M 30 20 C 35.5 20 40 24.5 40 30 C 40 34 37.5 37.5 34 39.2 L 34 43 L 26 43 L 26 39.2 C 22.5 37.5 20 34 20 30 C 20 24.5 24.5 20 30 20 Z" />
     </g>
-
-    <!-- 'v' -->
     <path d="M218 32L235 86H252L269 32H252L243.5 65L235 32H218Z" />
-
-    <!-- 't' -->
     <path d="M282 12H298V32H314V44H298V69C298 74 300.5 76 306 76H314V86H304C290.5 86 282 78.5 282 64.5V44H271V32H282V12Z" />
-
-    <!-- 'e' -->
     <path d="M323 58.5C323 42 334.5 30.5 350.5 30.5C366.5 30.5 377 42 377 58.5V61.5H339C340.5 70 346.5 75 354.5 75C361 75 365.5 71.5 368 66.5H376.5C373.5 78.5 363.5 86.5 350.5 86.5C334.5 86.5 323 75 323 58.5ZM361 50.5C360 43.5 355 40.5 350 40.5C345 40.5 340.5 43.5 339.5 50.5H361Z" />
-
-    <!-- 'c' -->
     <path d="M385 58.5C385 42 396.5 30.5 413 30.5C423.5 30.5 430.5 36.5 434 45.5H425C422 40 417.5 39.5 413 39.5C403.5 39.5 401 47 401 58.5C401 70 403.5 77.5 413 77.5C417.5 77.5 422 75 425 69.5H434C430.5 78.5 423.5 86.5 413 86.5C396.5 86.5 385 75 385 58.5Z" />
   </g>
-</svg>
+</svg>`;
+
+export async function GET() {
+  return new NextResponse(svgContent, {
+    headers: {
+      "Content-Type": "image/svg+xml",
+      "Cache-Control": "public, max-age=31536000, immutable",
+    },
+  });
+}
