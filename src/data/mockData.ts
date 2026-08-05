@@ -298,23 +298,29 @@ export const PRODUCTS: ProductItem[] = [
     id: "innov-crm",
     slug: "innov-crm",
     name: "InnovCRM",
-    tagline: "The Next-Gen AI-Powered Customer Relationship Platform",
-    description: "InnovCRM combines traditional contact and pipeline management with predictive lead scoring, automated email synthesis, and AI meeting summaries.",
-    badge: "Enterprise SaaS",
+    tagline: "The Complete CRM Solution for Education Consultancy Organizations",
+    description: "Specifically designed for education consultancy agencies helping students apply for higher education in the UK, EU, Australia, Canada, USA, and New Zealand. Jointly developed by Innovtec (Technical Partner) and Neuron Educare (Business Analyst).",
+    badge: "EdTech SaaS Platform",
     status: "Live",
     features: [
-      "Autonomous AI Lead Enrichment & Contact Discovery",
-      "Predictive Deal Win Probability & Revenue Forecasting",
-      "Automated Meeting Transcriptions & Action Item Extraction",
-      "Omnichannel Messaging (Email, WhatsApp, LinkedIn, SMS)",
-      "Custom Workflow Automation Builder"
+      "End-to-End Student Application & Compliance Management",
+      "Automated Sub-Agent Commission Payable & Receivable Engine",
+      "Reference Counselor Assignment & Multi-Branch Hierarchy",
+      "Dedicated Self-Service Student Portal & Agent Portal",
+      "Real-Time Application Tracking & Country-Wise Compliance Rules",
+      "Email Integration, Real-Time Notifications & Automated Lead Follow-ups"
     ],
-    targetAudience: ["B2B Enterprise Sales", "SaaS Companies", "Consulting Agencies", "Financial Advisors"],
-    techStack: ["Next.js", "Node.js", "PostgreSQL", "OpenAI API", "Redis", "Tailwind CSS"],
+    targetAudience: [
+      "Education Consultancy Agencies",
+      "Student Recruitment Firms",
+      "Higher Education Advisory Groups",
+      "Multi-Branch Study Abroad Agencies"
+    ],
+    techStack: ["ASP.NET Core API", "Angular Frontend", "MS SQL Server", "Amazon Web Services (AWS)", "S3 Compatible Blob Storage"],
     metrics: [
-      { label: "Sales Pipeline Velocity", value: "+145%" },
-      { label: "Admin Time Saved", value: "18 hrs/week" },
-      { label: "Close Rate Improvement", value: "+32%" }
+      { label: "Target Study Regions", value: "UK, EU, AU, CA, US, NZ" },
+      { label: "Sub-Agent Commission Processing", value: "100% Automated" },
+      { label: "Client Server Deployment", value: "Never (AWS SaaS Managed)" }
     ],
     demoUrl: "https://innovcrm.innovtec.ai",
     screenshots: [
@@ -707,19 +713,19 @@ export const TECH_CATEGORIES = [
   },
   {
     name: "Frontend",
-    items: ["Next.js 14/15", "React 18", "TypeScript", "Tailwind CSS", "Framer Motion", "Vue.js", "Redux Toolkit"]
+    items: ["Angular", "Next.js 14/15", "React 18", "TypeScript", "Tailwind CSS", "Framer Motion", "Vue.js"]
   },
   {
-    name: "Backend",
-    items: ["Node.js", "Go", "Python (FastAPI)", "Java Spring Boot", ".NET Core", "GraphQL", "REST APIs"]
+    name: "Backend & DB",
+    items: ["ASP.NET Core API", "MS SQL Server", "Node.js", "Go", "Python (FastAPI)", "Java Spring Boot", "PostgreSQL"]
   },
   {
     name: "Cloud & DevOps",
-    items: ["AWS", "Google Cloud", "Azure", "Kubernetes", "Docker", "Terraform", "GitHub Actions", "ArgoCD", "Datadog"]
+    items: ["AWS (Amazon Web Services)", "S3 Blob Storage", "Kubernetes", "Docker", "Terraform", "GitHub Actions", "DigitalOcean"]
   },
   {
     name: "Databases & Storage",
-    items: ["PostgreSQL", "MongoDB", "Redis", "Elasticsearch", "ClickHouse", "Pinecone", "Supabase"]
+    items: ["MS SQL Server", "PostgreSQL", "MongoDB", "Redis", "Elasticsearch", "Pinecone", "S3 Storage"]
   },
   {
     name: "Cyber Security & IoT",

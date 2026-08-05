@@ -18,6 +18,7 @@ import {
 } from "lucide-react";
 import { useApp } from "@/context/AppContext";
 import { Button } from "@/components/ui/Button";
+import { Logo } from "@/components/ui/Logo";
 
 export const Header: React.FC = () => {
   const pathname = usePathname();
@@ -67,23 +68,8 @@ export const Header: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 group">
-            <div className="relative flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-blue to-brand-cyan p-0.5 shadow-lg shadow-brand-blue/30 group-hover:scale-105 transition-transform">
-              <div className="w-full h-full bg-space-950 rounded-[10px] flex items-center justify-center">
-                <Brain className="w-5 h-5 text-brand-cyan group-hover:rotate-12 transition-transform" />
-              </div>
-            </div>
-            <div className="flex flex-col">
-              <span className="text-xl font-bold font-heading text-white tracking-tight flex items-center gap-1">
-                INNOVTEC
-                <span className="inline-block w-2 h-2 rounded-full bg-brand-cyan animate-pulse" />
-              </span>
-              <span className="text-[10px] font-mono tracking-widest text-slate-400 uppercase -mt-1">
-                AI Engineering
-              </span>
-            </div>
-          </Link>
+          {/* Official Logo Component */}
+          <Logo height={28} />
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-1">

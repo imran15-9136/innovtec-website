@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { 
@@ -11,14 +11,11 @@ import {
   Package, 
   Settings, 
   LogOut, 
-  Brain, 
   Bell, 
-  Lock, 
-  Sparkles,
-  ExternalLink,
-  ChevronRight
+  ExternalLink 
 } from "lucide-react";
 import { useApp } from "@/context/AppContext";
+import { Logo } from "@/components/ui/Logo";
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
@@ -47,15 +44,10 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
         <div>
           {/* Header Branding */}
           <div className="p-6 border-b border-slate-800 flex items-center justify-between">
-            <Link href="/admin/dashboard" className="flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-brand-blue to-brand-cyan flex items-center justify-center text-white">
-                <Brain className="w-4 h-4" />
-              </div>
-              <div className="flex flex-col">
-                <span className="text-sm font-bold font-heading text-white tracking-tight">INNOVTEC</span>
-                <span className="text-[9px] font-mono text-amber-400 uppercase">Admin CMS Panel</span>
-              </div>
-            </Link>
+            <div className="flex flex-col">
+              <Logo height={26} showTagline={false} />
+              <span className="text-[9px] font-mono text-amber-400 uppercase pt-1">Admin CMS Panel</span>
+            </div>
           </div>
 
           {/* Navigation Links */}

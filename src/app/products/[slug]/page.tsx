@@ -7,12 +7,17 @@ import { PRODUCTS } from "@/data/mockData";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { useApp } from "@/context/AppContext";
-import { CheckCircle2, ArrowLeft, ArrowRight, ExternalLink } from "lucide-react";
+import { CheckCircle2, ArrowLeft, ExternalLink } from "lucide-react";
+import InnovCRMProductPage from "@/app/products/innov-crm/page";
 
 export default function ProductDetailPage() {
   const params = useParams();
   const slug = params?.slug as string;
   const { openConsultationModal } = useApp();
+
+  if (slug === "innov-crm") {
+    return <InnovCRMProductPage />;
+  }
 
   const product = PRODUCTS.find((p) => p.slug === slug);
 

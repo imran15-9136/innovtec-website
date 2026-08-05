@@ -5,6 +5,7 @@ import { ServicesSection } from "@/components/home/ServicesSection";
 import { IndustriesSection } from "@/components/home/IndustriesSection";
 import { ProductsSection } from "@/components/home/ProductsSection";
 import { AIShowcaseSection } from "@/components/home/AIShowcaseSection";
+import { HumanAISection } from "@/components/home/HumanAISection";
 import { PortfolioSection } from "@/components/home/PortfolioSection";
 import { WhyInnovtecSection } from "@/components/home/WhyInnovtecSection";
 import { ProcessTimelineSection } from "@/components/home/ProcessTimelineSection";
@@ -27,6 +28,7 @@ export default function HomePage() {
       <IndustriesSection />
       <ProductsSection />
       <AIShowcaseSection />
+      <HumanAISection />
       <PortfolioSection />
       <WhyInnovtecSection />
       <ProcessTimelineSection />

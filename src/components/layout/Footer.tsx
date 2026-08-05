@@ -4,17 +4,15 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { 
-  Brain, 
   Send, 
   CheckCircle2, 
   Github, 
   Linkedin, 
   Twitter, 
-  Globe,
-  Lock,
-  Sparkles
+  Lock
 } from "lucide-react";
 import { Button } from "@/components/ui/Button";
+import { Logo } from "@/components/ui/Logo";
 
 export const Footer: React.FC = () => {
   const pathname = usePathname();
@@ -48,16 +46,7 @@ export const Footer: React.FC = () => {
           
           {/* Brand Info (2 cols) */}
           <div className="lg:col-span-2 space-y-5">
-            <Link href="/" className="flex items-center gap-3">
-              <div className="flex items-center justify-center w-9 h-9 rounded-lg bg-gradient-to-tr from-brand-blue to-brand-cyan p-0.5 shadow-md">
-                <div className="w-full h-full bg-space-950 rounded-[7px] flex items-center justify-center">
-                  <Brain className="w-4 h-4 text-brand-cyan" />
-                </div>
-              </div>
-              <span className="text-xl font-bold font-heading text-white tracking-tight">
-                INNOVTEC
-              </span>
-            </Link>
+            <Logo height={32} />
 
             <p className="text-sm text-slate-400 max-w-sm leading-relaxed">
               Engineering Intelligent Digital Solutions. Positioning enterprise organizations for AI-first digital leadership through modern software, cloud, and cyber engineering.
