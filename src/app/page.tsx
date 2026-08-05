@@ -12,7 +12,6 @@ import { ProcessTimelineSection } from "@/components/home/ProcessTimelineSection
 import { TechStackSection } from "@/components/home/TechStackSection";
 import { TestimonialsSection } from "@/components/home/TestimonialsSection";
 import { InsightsSection } from "@/components/home/InsightsSection";
-import { FinalCTASection } from "@/components/home/FinalCTASection";
 
 export const metadata = {
   title: "Innovtec | AI-First Digital Engineering Company",
@@ -35,7 +34,6 @@ export default function HomePage() {
       <TechStackSection />
       <TestimonialsSection />
       <InsightsSection />
-      <FinalCTASection />
     </main>
   );
 }

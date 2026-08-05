@@ -1,173 +1,101 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
-import { 
-  Sparkles, 
-  ArrowRight, 
-  Brain, 
-  Zap, 
-  Code2, 
-  CheckCircle2,
-  TrendingUp
-} from "lucide-react";
+import { Sparkles, ArrowUpRight, Brain, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { useApp } from "@/context/AppContext";
 
 export const HeroSection: React.FC = () => {
   const { openConsultationModal, openAIModal } = useApp();
+  const [imgError, setImgError] = useState(false);
+
+  // Full-width Human & AI combination image
+  const primaryHeroBg = "https://images.unsplash.com/photo-1593508512255-86ab42a8e620?q=80&w=2000";
+  const fallbackHeroBg = "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2000";
 
   return (
-    <section className="relative min-h-[92vh] flex items-center justify-center pt-28 pb-20 overflow-hidden bg-space-950">
+    <section className="relative min-h-[88vh] flex items-center pt-10 sm:pt-12 pb-16 overflow-hidden bg-[#060811] text-white">
       
-      {/* 1. HIGH-TECH FUTURISTIC AI BACKGROUND IMAGE OVERLAY */}
-      <div className="absolute inset-0 z-0 pointer-events-none select-none">
+      {/* 1. FULL-WIDTH HUMAN & AI BACKGROUND IMAGE */}
+      <div className="absolute inset-0 z-0 pointer-events-none select-none -top-36 sm:-top-52">
         <img
-          src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2000"
-          alt="AI Tech Cloud Background"
-          className="w-full h-full object-cover object-center opacity-25 filter contrast-125 saturate-150"
+          src={imgError ? fallbackHeroBg : primaryHeroBg}
+          alt="Human and AI Working Together"
+          onError={() => setImgError(true)}
+          className="w-full h-full object-cover object-top sm:object-[85%_0%] opacity-85 filter contrast-115 brightness-105"
         />
-        {/* Dark Vignette Overlay Gradient */}
-        <div className="absolute inset-0 bg-gradient-to-b from-space-950/90 via-space-950/80 to-space-950" />
-        <div className="absolute inset-0 bg-gradient-to-r from-space-950 via-transparent to-space-950" />
+        
+        {/* Crisp Left Dark Gradient Mask */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#060811] via-[#060811]/85 to-transparent sm:w-1/2" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#060811] via-transparent to-[#060811]/60" />
       </div>
 
-      {/* 2. Dynamic Background Neural Grid Line Overlay */}
-      <div className="absolute inset-0 z-0 bg-[linear-gradient(to_right,#1e293b20_1px,transparent_1px),linear-gradient(to_bottom,#1e293b20_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none" />
+      {/* 2. Soft Ambient Radial Glow */}
+      <div className="absolute top-1/4 left-10 w-96 h-96 bg-purple-600/15 rounded-full blur-[140px] pointer-events-none z-0" />
 
-      {/* 3. Ambient Cyan & Blue Radial Glow Spots */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-gradient-to-r from-brand-blue/20 via-brand-purple/25 to-brand-cyan/20 rounded-full blur-[120px] pointer-events-none z-0" />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+      {/* 3. USER-FRIENDLY COMPACT TEXT CONTENT ON THE LEFT */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
         
-        {/* Pill Badge */}
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-space-900/90 border border-brand-cyan/40 shadow-xl shadow-brand-cyan/15 backdrop-blur-xl mb-8"
-        >
-          <span className="flex h-2 w-2 rounded-full bg-brand-cyan animate-ping" />
-          <Sparkles className="w-4 h-4 text-brand-cyan" />
-          <span className="text-xs font-semibold tracking-wide text-slate-200 uppercase">
-            AI-First Digital Engineering Platform
-          </span>
-        </motion.div>
-
-        {/* Main Hero Headline */}
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-4xl sm:text-6xl lg:text-7xl font-extrabold font-heading text-white tracking-tight leading-[1.1] max-w-5xl mx-auto drop-shadow-lg"
-        >
-          Engineering Intelligent <br className="hidden sm:inline" />
-          <span className="text-gradient-blue">Digital Solutions</span> for Enterprise
-        </motion.h1>
-
-        {/* Supporting Copy */}
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="mt-6 text-lg sm:text-xl text-slate-200 max-w-3xl mx-auto leading-relaxed font-normal drop-shadow-md"
-        >
-          Innovtec accelerates business growth through high-performance <strong className="text-white">Artificial Intelligence</strong>, Enterprise Software, Cloud Architecture, DevOps, IoT, and Cyber Security.
-        </motion.p>
-
-        {/* Call to Actions */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md mx-auto"
-        >
-          <Button
-            variant="gradient"
-            size="lg"
-            className="w-full sm:w-auto"
-            onClick={() => openConsultationModal()}
-            icon={<ArrowRight className="w-4 h-4" />}
-          >
-            Book Free Consultation
-          </Button>
-
-          <Button
-            variant="outline"
-            size="lg"
-            className="w-full sm:w-auto"
-            onClick={openAIModal}
-            icon={<Brain className="w-4 h-4 text-brand-cyan" />}
-          >
-            Explore AI Assistant
-          </Button>
-        </motion.div>
-
-        {/* Trust Badges */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-12 flex flex-wrap items-center justify-center gap-6 text-xs text-slate-300 font-medium"
-        >
-          <div className="flex items-center gap-2">
-            <CheckCircle2 className="w-4 h-4 text-brand-emerald" />
-            <span>SOC 2 Type II Compliant</span>
+        <div className="max-w-md text-left space-y-5">
+          
+          {/* Pill Badge */}
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#0D1322]/90 border border-purple-500/40 shadow-xl shadow-purple-500/10 backdrop-blur-xl">
+            <Sparkles className="w-3.5 h-3.5 text-purple-400" />
+            <span className="text-xs font-semibold tracking-wider text-slate-200 uppercase font-mono">
+              AI & Digital Engineering Partner
+            </span>
           </div>
-          <div className="flex items-center gap-2">
-            <CheckCircle2 className="w-4 h-4 text-brand-emerald" />
-            <span>99.99% Enterprise SLA</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <CheckCircle2 className="w-4 h-4 text-brand-emerald" />
-            <span>AI RAG & Vector Experts</span>
-          </div>
-        </motion.div>
 
-        {/* Hero Metrics Dashboard Cards */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.5 }}
-          className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto"
-        >
-          <div className="glass-card p-5 rounded-2xl text-left border border-slate-800/90 backdrop-blur-2xl">
-            <div className="flex items-center justify-between text-brand-cyan mb-2">
-              <Code2 className="w-5 h-5" />
-              <span className="text-[10px] font-mono uppercase text-slate-400">Deployed</span>
+          {/* User-Friendly Compact Title (Not Big) */}
+          <h1 className="text-2xl sm:text-4xl font-extrabold font-heading text-white tracking-tight leading-[1.15]">
+            Transforming Business with <br />
+            <span className="bg-gradient-to-r from-purple-400 via-indigo-300 to-cyan-400 bg-clip-text text-transparent">
+              AI & Modern Software
+            </span>
+          </h1>
+
+          {/* User-Friendly Subtitle */}
+          <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">
+            We build intelligent digital applications, cloud platforms, and custom software systems designed to scale your business effortlessly.
+          </p>
+
+          {/* Compact Action Buttons */}
+          <div className="pt-1 flex flex-wrap items-center gap-3">
+            <Button
+              variant="gradient"
+              size="lg"
+              onClick={() => openConsultationModal()}
+              icon={<ArrowUpRight className="w-4 h-4" />}
+              className="px-6 font-semibold shadow-xl shadow-purple-600/25 text-xs sm:text-sm"
+            >
+              Book Free Consultation
+            </Button>
+
+            <Button
+              variant="outline"
+              size="lg"
+              onClick={openAIModal}
+              icon={<Brain className="w-4 h-4 text-cyan-400" />}
+              className="px-5 border-slate-700/80 hover:border-cyan-400/60 text-xs sm:text-sm"
+            >
+              Ask Innovtec AI
+            </Button>
+          </div>
+
+          {/* Trust Tags */}
+          <div className="pt-3 flex flex-wrap items-center gap-5 text-xs text-slate-400 font-medium border-t border-slate-800/80">
+            <div className="flex items-center gap-2">
+              <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+              <span>SOC 2 Type II Certified</span>
             </div>
-            <div className="text-2xl sm:text-3xl font-extrabold text-white font-heading">100+</div>
-            <div className="text-xs text-slate-400 mt-1">Enterprise Digital Systems</div>
+            <div className="flex items-center gap-2">
+              <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+              <span>99.99% Cloud Uptime SLA</span>
+            </div>
           </div>
 
-          <div className="glass-card p-5 rounded-2xl text-left border border-slate-800/90 backdrop-blur-2xl">
-            <div className="flex items-center justify-between text-brand-purple mb-2">
-              <Brain className="w-5 h-5" />
-              <span className="text-[10px] font-mono uppercase text-slate-400">Accuracy</span>
-            </div>
-            <div className="text-2xl sm:text-3xl font-extrabold text-white font-heading">99.4%</div>
-            <div className="text-xs text-slate-400 mt-1">AI Document RAG Precision</div>
-          </div>
-
-          <div className="glass-card p-5 rounded-2xl text-left border border-slate-800/90 backdrop-blur-2xl">
-            <div className="flex items-center justify-between text-brand-emerald mb-2">
-              <TrendingUp className="w-5 h-5" />
-              <span className="text-[10px] font-mono uppercase text-slate-400">Efficiency</span>
-            </div>
-            <div className="text-2xl sm:text-3xl font-extrabold text-white font-heading">$4.2M+</div>
-            <div className="text-xs text-slate-400 mt-1">Client Expenses Saved</div>
-          </div>
-
-          <div className="glass-card p-5 rounded-2xl text-left border border-slate-800/90 backdrop-blur-2xl">
-            <div className="flex items-center justify-between text-brand-blue mb-2">
-              <Zap className="w-5 h-5" />
-              <span className="text-[10px] font-mono uppercase text-slate-400">Response</span>
-            </div>
-            <div className="text-2xl sm:text-3xl font-extrabold text-white font-heading">&lt;150ms</div>
-            <div className="text-xs text-slate-400 mt-1">Global API Edge Latency</div>
-          </div>
-        </motion.div>
+        </div>
 
       </div>
     </section>
