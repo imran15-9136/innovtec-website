@@ -300,6 +300,7 @@ export const PRODUCTS: ProductItem[] = [
     name: "InnovCRM",
     tagline: "The Complete CRM Solution for Education Consultancy Organizations",
     description: "Specifically designed for education consultancy agencies helping students apply for higher education in the UK, EU, Australia, Canada, USA, and New Zealand. Jointly developed by Innovtec (Technical Partner) and Neuron Educare (Business Analyst).",
+    fullDescription: "InnovCRM is an enterprise-grade cloud SaaS platform engineered to manage complex multi-country student recruitment workflows. From lead acquisition and document verification to sub-agent commission distribution and university offers, InnovCRM digitizes your entire education consultancy business in one secure hub.",
     badge: "EdTech SaaS Platform",
     status: "Live",
     features: [
@@ -318,7 +319,7 @@ export const PRODUCTS: ProductItem[] = [
     ],
     techStack: ["ASP.NET Core API", "Angular Frontend", "MS SQL Server", "Amazon Web Services (AWS)", "S3 Compatible Blob Storage"],
     metrics: [
-      { label: "Target Study Regions", value: "UK, EU, AU, CA, US, NZ" },
+      { label: "Social Channels", value: "FB, IG, WA, TG, LI" },
       { label: "Sub-Agent Commission Processing", value: "100% Automated" },
       { label: "Client Server Deployment", value: "Never (AWS SaaS Managed)" }
     ],
@@ -326,6 +327,129 @@ export const PRODUCTS: ProductItem[] = [
     screenshots: [
       "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000",
       "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000"
+    ],
+    demoVideo: {
+      thumbnailUrl: "https://images.unsplash.com/photo-1531403009284-440f080d1e12?q=80&w=1200",
+      title: "InnovCRM Platform Overview & Live Workflow Demonstration",
+      duration: "4:30 min demo"
+    },
+    detailedFeatures: [
+      {
+        id: "feat-1",
+        title: "Multi-Branch & Hierarchy Management",
+        description: "Organize your agency across multiple city branches and countries. Assign granular role permissions to branch managers, senior counselors, and junior agents with absolute data privacy isolation.",
+        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800",
+        highlights: [
+          "Granular role-based access control (RBAC)",
+          "Branch-level performance & revenue analytics",
+          "Centralized student document repository"
+        ]
+      },
+      {
+        id: "feat-2",
+        title: "Sub-Agent Commission Engine",
+        description: "Automatically calculate university commission splits between your main agency and partner sub-agents based on customized contracts, currency conversions, and enrollment stages.",
+        image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800",
+        highlights: [
+          "Automated payable & receivable statement generation",
+          "Multi-currency payout support (GBP, USD, EUR, AUD)",
+          "Real-time commission status tracking for sub-agents"
+        ]
+      },
+      {
+        id: "feat-3",
+        title: "Country Compliance & Application Pipeline",
+        description: "Built-in visa checklist guidelines and admission requirement rules for top study destinations including UK, EU, Australia, Canada, USA, and New Zealand.",
+        image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800",
+        highlights: [
+          "Automated document verification alerts",
+          "University offer letter & CAS tracking",
+          "Student portal for real-time application updates"
+        ]
+      },
+      {
+        id: "feat-4",
+        title: "Omnichannel Social Media & Messaging Integration",
+        description: "Connect Facebook Lead Ads, Instagram Direct, WhatsApp Business API, Telegram Bots, and LinkedIn Messaging into a unified counselor inbox for instant student engagement.",
+        image: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=800",
+        highlights: [
+          "Facebook & Instagram lead ad auto-synchronization",
+          "WhatsApp & Telegram automated status notifications",
+          "LinkedIn prospective student and sub-agent inbox"
+        ]
+      }
+    ],
+    packageCards: [
+      {
+        id: "pkg-1",
+        name: "Standard Agency",
+        price: "$100",
+        billingPeriod: "per month",
+        description: "Ideal for growing education consultancies operating up to 2 branch offices.",
+        popular: false,
+        featuresIncluded: [
+          "Up to 10 Staff & Counselor Users",
+          "Up to 10 Sub-Agency Accounts",
+          "50 GB Secure Cloud Storage",
+          "Up to 2 Branch Offices",
+          "Full Student Application Pipeline",
+          "Automated Sub-Agent Commission Engine",
+          "Dedicated Student Self-Service Portal",
+          "Email & WhatsApp Notifications",
+          "AWS Cloud Hosted & SSL Secured"
+        ],
+        ctaText: "Get Started with Standard"
+      },
+      {
+        id: "pkg-2",
+        name: "Growth Agency Pro",
+        price: "$300",
+        billingPeriod: "per month",
+        description: "Built for established agencies expanding across multiple cities and international sub-agent networks.",
+        popular: true,
+        badge: "Most Popular",
+        featuresIncluded: [
+          "Up to 30 Staff & Counselor Users",
+          "Up to 50 Sub-Agency Accounts",
+          "250 GB Secure Cloud Storage",
+          "Up to 5 Branch Offices",
+          "Full Student Application Pipeline",
+          "Automated Sub-Agent Commission Engine",
+          "Dedicated Student & Agent Self-Service Portals",
+          "Advanced Financial & Commission Analytics",
+          "Custom Subdomain (youragency.innovcrm.ai)",
+          "Priority 24/7 Technical Support",
+          "AWS Cloud Hosted & SSL Secured"
+        ],
+        ctaText: "Start Growth Pro Trial"
+      },
+      {
+        id: "pkg-3",
+        name: "Enterprise Custom",
+        price: "Custom",
+        billingPeriod: "tailored SLA & volume scale",
+        description: "For large multinational education networks requiring custom API integrations and dedicated cloud infrastructure.",
+        popular: false,
+        featuresIncluded: [
+          "Unlimited Staff & Counselor Users",
+          "Dedicated Private Cloud Cluster",
+          "Custom University API Integrations",
+          "Whitelabel Branding & Custom Domain",
+          "SLA Uptime Guarantee (99.99%)",
+          "Staff Onboarding & Live Training"
+        ],
+        ctaText: "Contact Enterprise Team"
+      }
+    ],
+    faqList: [
+      {
+        question: "Can InnovCRM be deployed on our local company server?",
+        answer: "No. InnovCRM is delivered strictly as a fully managed AWS cloud SaaS solution to ensure zero server maintenance, 100% security patching, and high availability."
+      },
+      {
+        question: "Will our student data be shared with third parties?",
+        answer: "Never. Your data is strictly encrypted and isolated. Innovtec guarantees 100% data confidentiality and will never share your agency data with third parties or competitors."
+      }
     ]
   },
   {
@@ -334,6 +458,7 @@ export const PRODUCTS: ProductItem[] = [
     name: "InnovAI Orchestrator",
     tagline: "Autonomous AI Agent & Multi-Model Workflow Platform",
     description: "Build, test, and deploy multi-agent AI workflows visually. Connect your enterprise databases directly to fine-tuned LLMs with built-in guardrails.",
+    fullDescription: "InnovAI Orchestrator empowers enterprise tech teams to connect proprietary SQL, Vector databases, and internal APIs into intelligent, self-correcting AI workflows with zero code friction and total data privacy.",
     badge: "AI Platform",
     status: "Live",
     features: [
@@ -353,6 +478,71 @@ export const PRODUCTS: ProductItem[] = [
     demoUrl: "https://orchestrator.innovtec.ai",
     screenshots: [
       "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1000"
+    ],
+    demoVideo: {
+      thumbnailUrl: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=1200",
+      title: "InnovAI Orchestrator Visual Pipeline Builder Walkthrough",
+      duration: "3:15 min demo"
+    },
+    detailedFeatures: [
+      {
+        id: "feat-a1",
+        title: "Visual Multi-Agent Flow Studio",
+        description: "Connect specialized AI agents for web research, document parsing, and database queries in an intuitive drag-and-drop workflow canvas.",
+        image: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=800",
+        highlights: [
+          "Pre-built agent templates for Finance & Legal",
+          "Automated fallback logic & self-correction",
+          "Live execution step-by-step debugger"
+        ]
+      },
+      {
+        id: "feat-a2",
+        title: "Enterprise RAG & Guardrails",
+        description: "Safely query internal PDF archives and SQL tables with zero data leakage, automatic PII masking, and verified source citations.",
+        image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=800",
+        highlights: [
+          "Qdrant & Pinecone multi-tenant connectors",
+          "100% Private VPC data isolation",
+          "Hallucination check & confidence score"
+        ]
+      }
+    ],
+    packageCards: [
+      {
+        id: "pkg-a1",
+        name: "Developer Starter",
+        price: "$499",
+        billingPeriod: "per month",
+        description: "For engineering teams building and testing production RAG pipelines.",
+        popular: false,
+        featuresIncluded: [
+          "Up to 5 Active Agent Workflows",
+          "1,000,000 Ingested Tokens / Mo",
+          "Pre-built Vector Connectors",
+          "Standard PII Redaction",
+          "Community & Email Support"
+        ],
+        ctaText: "Start Developer Plan"
+      },
+      {
+        id: "pkg-a2",
+        name: "Enterprise Business",
+        price: "$1,499",
+        billingPeriod: "per month / billed annually",
+        description: "For organizations scaling autonomous AI workflows across multiple departments.",
+        popular: true,
+        badge: "Recommended",
+        featuresIncluded: [
+          "Unlimited Agent Workflows",
+          "10,000,000 Ingested Tokens / Mo",
+          "Private AWS / GCP VPC Deploy",
+          "Custom LLM Fine-Tuning Support",
+          "SOC 2 Compliance Guardrails",
+          "Dedicated AI Solutions Architect"
+        ],
+        ctaText: "Request Business Demo"
+      }
     ]
   },
   {
@@ -361,6 +551,7 @@ export const PRODUCTS: ProductItem[] = [
     name: "EduPulse SMS",
     tagline: "Modern Campus Operations & AI Student Analytics Platform",
     description: "Comprehensive institutional software for universities, schools, and training academies. Tracks student attendance, grades, finance, and career pathways.",
+    fullDescription: "EduPulse SMS provides higher education institutions with unified academic administration, automated AI grading tools, and predictive dropout analytics to boost student retention.",
     badge: "EdTech Platform",
     status: "Live",
     features: [
@@ -380,6 +571,43 @@ export const PRODUCTS: ProductItem[] = [
     demoUrl: "https://edupulse.innovtec.ai",
     screenshots: [
       "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1000"
+    ],
+    demoVideo: {
+      thumbnailUrl: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1200",
+      title: "EduPulse SMS Campus Operations & AI Analytics Demo",
+      duration: "4:00 min demo"
+    },
+    detailedFeatures: [
+      {
+        id: "feat-e1",
+        title: "Predictive Student Dropout Early-Warning",
+        description: "Machine learning algorithms analyze attendance patterns and test scores to identify at-risk students before they fall behind.",
+        image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=800",
+        highlights: [
+          "Automated counselor intervention triggers",
+          "Comprehensive student academic health score",
+          "Parent portal real-time notifications"
+        ]
+      }
+    ],
+    packageCards: [
+      {
+        id: "pkg-e1",
+        name: "Campus Tier",
+        price: "$899",
+        billingPeriod: "per month",
+        description: "Full institutional suite for up to 1,500 enrolled students.",
+        popular: true,
+        badge: "Institutional Favorite",
+        featuresIncluded: [
+          "Complete Academic & Grading Suite",
+          "Student & Parent Mobile Apps",
+          "AI Early-Warning Dropout Analytics",
+          "Fee Management & Billing Connectors",
+          "99.9% Uptime Cloud Infrastructure"
+        ],
+        ctaText: "Schedule Campus Demo"
+      }
     ]
   },
   {
@@ -388,6 +616,7 @@ export const PRODUCTS: ProductItem[] = [
     name: "PulseNotify Engine",
     tagline: "High-Throughput Omnichannel Push, Email & SMS Gateway",
     description: "Enterprise notification engine capable of routing 1,000,000+ transactional notifications per minute across Email, SMS, WhatsApp, Push, and Webhooks.",
+    fullDescription: "PulseNotify Engine provides high-volume digital products with sub-second transactional messaging, smart channel fallback logic, and real-time deliverability insights.",
     badge: "Developer Infrastructure",
     status: "Live",
     features: [
@@ -406,6 +635,43 @@ export const PRODUCTS: ProductItem[] = [
     demoUrl: "https://pulsenotify.innovtec.ai",
     screenshots: [
       "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=1000"
+    ],
+    demoVideo: {
+      thumbnailUrl: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=1200",
+      title: "PulseNotify High-Throughput Routing Demo",
+      duration: "2:45 min demo"
+    },
+    detailedFeatures: [
+      {
+        id: "feat-p1",
+        title: "Omnichannel Smart Fallback Routing",
+        description: "Automatically route transactional messages through the most cost-effective channel (Push -> WhatsApp -> SMS) with sub-second failover.",
+        image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=800",
+        highlights: [
+          "99.98% delivery reliability",
+          "Real-time ClickHouse analytics dashboard",
+          "One-click SDK integration"
+        ]
+      }
+    ],
+    packageCards: [
+      {
+        id: "pkg-p1",
+        name: "Scale Engine",
+        price: "$399",
+        billingPeriod: "per month",
+        description: "Built for high-volume apps sending up to 500k messages monthly.",
+        popular: true,
+        badge: "Developer Pick",
+        featuresIncluded: [
+          "500,000 Included Monthly Messages",
+          "Smart Fallback Routing",
+          "Sub-second Delivery SLA",
+          "SDKs for Go, Node, Python, Java",
+          "24/7 Monitoring & Alerting"
+        ],
+        ctaText: "Get Started with PulseNotify"
+      }
     ]
   }
 ];

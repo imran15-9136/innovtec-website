@@ -36,12 +36,41 @@ export interface ServiceItem {
   faqs: { question: string; answer: string }[];
 }
 
+export interface ProductDemoVideo {
+  videoUrl?: string;
+  thumbnailUrl: string;
+  title: string;
+  duration?: string;
+}
+
+export interface DetailedFeature {
+  id: string;
+  title: string;
+  description: string;
+  image: string;
+  highlights: string[];
+  iconName?: string;
+}
+
+export interface ProductPackageCard {
+  id: string;
+  name: string;
+  price: string;
+  billingPeriod: string;
+  description: string;
+  popular?: boolean;
+  badge?: string;
+  featuresIncluded: string[];
+  ctaText: string;
+}
+
 export interface ProductItem {
   id: string;
   slug: string;
   name: string;
   tagline: string;
   description: string;
+  fullDescription?: string;
   badge: string;
   status: "Live" | "Beta" | "Upcoming";
   features: string[];
@@ -50,6 +79,10 @@ export interface ProductItem {
   metrics: { label: string; value: string }[];
   demoUrl?: string;
   screenshots: string[];
+  demoVideo?: ProductDemoVideo;
+  detailedFeatures?: DetailedFeature[];
+  packageCards?: ProductPackageCard[];
+  faqList?: { question: string; answer: string }[];
 }
 
 export interface CaseStudy {
