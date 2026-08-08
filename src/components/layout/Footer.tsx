@@ -9,7 +9,10 @@ import {
   Github, 
   Linkedin, 
   Twitter, 
-  Lock
+  Lock,
+  Phone,
+  Mail,
+  MapPin
 } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { Logo } from "@/components/ui/Logo";
@@ -51,6 +54,25 @@ export const Footer: React.FC = () => {
             <p className="text-sm text-slate-400 max-w-sm leading-relaxed">
               Engineering Intelligent Digital Solutions. Positioning enterprise organizations for AI-first digital leadership through modern software, cloud, and cyber engineering.
             </p>
+
+            {/* Contact Quick Highlights */}
+            <div className="space-y-2 pt-1 text-xs text-slate-300">
+              <div className="flex items-center gap-2">
+                <Phone className="w-3.5 h-3.5 text-brand-cyan shrink-0" />
+                <a href="tel:+8801773893339" className="hover:text-white font-mono transition-colors">+880 1773-893339</a>
+              </div>
+              <div className="flex items-center gap-2">
+                <Mail className="w-3.5 h-3.5 text-brand-cyan shrink-0" />
+                <a href="mailto:info@innovtec.it.com" className="hover:text-white font-mono transition-colors">info@innovtec.it.com</a>
+              </div>
+              <div className="flex items-start gap-2 pt-1 text-[11px] text-slate-400">
+                <MapPin className="w-3.5 h-3.5 text-purple-400 shrink-0 mt-0.5" />
+                <span>
+                  <strong>Dhaka:</strong> House 26/A, Level 4,5, Uttara, Dhaka – 1230<br />
+                  <strong>UK:</strong> Wellesley House, 102 Cranbrook Rd, Ilford IG1 4NH
+                </span>
+              </div>
+            </div>
 
             {/* Newsletter Subscription Form */}
             <div className="space-y-2 pt-2">

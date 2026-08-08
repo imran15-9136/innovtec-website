@@ -117,27 +117,60 @@ export default function ContactPage() {
 
           {/* Contact Cards & Global Offices */}
           <div className="space-y-8">
-            <div className="glass-card p-8 rounded-3xl border border-slate-800 space-y-4">
-              <h3 className="text-xl font-bold font-heading text-white">Global Headquarters</h3>
-              <div className="space-y-3 text-xs text-slate-300">
-                <div className="flex items-center gap-3"><MapPin className="w-4 h-4 text-brand-cyan" /> 500 Howard Street, Suite 400, San Francisco, CA 94105</div>
-                <div className="flex items-center gap-3"><Mail className="w-4 h-4 text-brand-cyan" /> contact@innovtec.ai</div>
-                <div className="flex items-center gap-3"><Phone className="w-4 h-4 text-brand-cyan" /> +1 (800) 555-INNOV</div>
-                <div className="flex items-center gap-3"><Clock className="w-4 h-4 text-brand-cyan" /> Mon – Fri: 8:00 AM – 6:00 PM PST</div>
+            <div className="glass-card p-8 rounded-3xl border border-slate-800 space-y-5">
+              <h3 className="text-xl font-bold font-heading text-white">Contact Innovtec Direct</h3>
+              <div className="space-y-4 text-sm text-slate-300">
+                <div className="flex items-center gap-3">
+                  <Phone className="w-5 h-5 text-brand-cyan shrink-0" />
+                  <div>
+                    <div className="text-xs text-slate-400 font-mono uppercase">Direct Phone / WhatsApp</div>
+                    <a href="tel:+8801773893339" className="font-bold text-white hover:text-brand-cyan transition-colors text-base">+880 1773-893339</a>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-3">
+                  <Mail className="w-5 h-5 text-brand-cyan shrink-0" />
+                  <div>
+                    <div className="text-xs text-slate-400 font-mono uppercase">Official Email Address</div>
+                    <a href="mailto:info@innovtec.it.com" className="font-bold text-white hover:text-brand-cyan transition-colors text-base">info@innovtec.it.com</a>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <Clock className="w-5 h-5 text-brand-cyan shrink-0 mt-0.5" />
+                  <div>
+                    <div className="text-xs text-slate-400 font-mono uppercase">Business Hours</div>
+                    <div className="font-medium text-slate-200">Sun – Thu: 9:00 AM – 6:00 PM</div>
+                    <div className="text-xs text-slate-400">24/7 Technical Support for SaaS Managed Clients</div>
+                  </div>
+                </div>
               </div>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div className="glass-card p-6 rounded-2xl border border-slate-800 space-y-2">
-                <div className="text-sm font-bold text-white font-heading">London Tech Hub</div>
-                <div className="text-xs text-slate-400">100 Bishopsgate, London EC2N 4AG</div>
-                <div className="text-[11px] text-brand-cyan">uk@innovtec.ai</div>
-              </div>
+            {/* Office Locations */}
+            <div className="space-y-4">
+              <h3 className="text-lg font-bold font-heading text-white flex items-center gap-2">
+                <Building2 className="w-5 h-5 text-purple-400" /> Corporate Office Locations
+              </h3>
 
-              <div className="glass-card p-6 rounded-2xl border border-slate-800 space-y-2">
-                <div className="text-sm font-bold text-white font-heading">Singapore Innovation Lab</div>
-                <div className="text-xs text-slate-400">7 Straits View, Marina One, Singapore</div>
-                <div className="text-[11px] text-brand-cyan">apac@innovtec.ai</div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="glass-card p-6 rounded-2xl border border-slate-800 space-y-2">
+                  <div className="text-xs font-mono font-bold text-purple-400 uppercase">Bangladesh Head Office</div>
+                  <div className="text-sm font-bold text-white font-heading">Dhaka Office</div>
+                  <div className="text-xs text-slate-300 leading-relaxed">
+                    House 26/A, Level 4,5,<br />Uttara, Dhaka – 1230
+                  </div>
+                  <div className="pt-2 text-xs text-brand-cyan font-mono">+880 1773-893339</div>
+                </div>
+
+                <div className="glass-card p-6 rounded-2xl border border-slate-800 space-y-2">
+                  <div className="text-xs font-mono font-bold text-cyan-400 uppercase">United Kingdom Office</div>
+                  <div className="text-sm font-bold text-white font-heading">UK Office</div>
+                  <div className="text-xs text-slate-300 leading-relaxed">
+                    Wellesley House, 102 Cranbrook Road,<br />Ilford IG1 4NH, UK
+                  </div>
+                  <div className="pt-2 text-xs text-brand-cyan font-mono">info@innovtec.it.com</div>
+                </div>
               </div>
             </div>
           </div>
