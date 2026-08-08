@@ -359,7 +359,7 @@ export default function ProductDetailPage() {
                   key={feat.id}
                   id={`feature-module-${feat.id}`}
                   className={`grid grid-cols-1 lg:grid-cols-12 gap-12 sm:gap-16 items-center py-6 relative ${
-                    idx !== product.detailedFeatures.length - 1 ? "border-b border-slate-800/50 pb-20 sm:pb-28" : ""
+                    idx !== (product.detailedFeatures?.length ?? 0) - 1 ? "border-b border-slate-800/50 pb-20 sm:pb-28" : ""
                   }`}
                 >
                   
