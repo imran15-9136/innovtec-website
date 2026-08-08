@@ -28,7 +28,7 @@ import {
   Check,
   ChevronRight
 } from "lucide-react";
-import InnovCRMProductPage from "@/app/products/innov-crm/page";
+import { InnovCRMProductPage } from "@/components/products/InnovCRMProductPage";
 
 export default function ProductDetailPage() {
   const params = useParams();
@@ -54,6 +54,13 @@ export default function ProductDetailPage() {
       </div>
     );
   }
+
+  const detailedFeatures = product.detailedFeatures || [];
+  const packageCards = product.packageCards || [];
+  const faqList = product.faqList || [];
+  const metrics = product.metrics || [];
+  const targetAudience = product.targetAudience || [];
+  const features = product.features || [];
 
   const defaultHeroImage = product.screenshots && product.screenshots.length > 0 
     ? product.screenshots[0]
@@ -100,16 +107,18 @@ export default function ProductDetailPage() {
           </div>
 
           {/* Key Metrics Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto p-6 rounded-2xl bg-space-900 border border-slate-800 shadow-xl">
-            {product.metrics.map((m) => (
-              <div key={m.label} className="text-center sm:text-left">
-                <div className="text-2xl sm:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400 font-heading">
-                  {m.value}
+          {metrics.length > 0 && (
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto p-6 rounded-2xl bg-space-900 border border-slate-800 shadow-xl">
+              {metrics.map((m) => (
+                <div key={m.label} className="text-center sm:text-left">
+                  <div className="text-2xl sm:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400 font-heading">
+                    {m.value}
+                  </div>
+                  <div className="text-xs text-slate-400 mt-1 font-medium">{m.label}</div>
                 </div>
-                <div className="text-xs text-slate-400 mt-1 font-medium">{m.label}</div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          )}
 
           {/* CTA Action Buttons */}
           <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
@@ -135,19 +144,19 @@ export default function ProductDetailPage() {
           </div>
 
           {/* Target Audience Badges */}
-          <div className="pt-2 flex flex-wrap items-center justify-center gap-2">
-            <span className="text-xs font-semibold uppercase tracking-wider text-slate-400 mr-2 block sm:inline">Designed For:</span>
-            {product.targetAudience.map((aud) => (
-              <span
-                key={aud}
-                className="px-3 py-1 rounded-full bg-space-900 border border-slate-800 text-xs font-medium text-slate-300"
-              >
-                {aud}
-              </span>
-            ))}
-          </div>
-
-
+          {targetAudience.length > 0 && (
+            <div className="pt-2 flex flex-wrap items-center justify-center gap-2">
+              <span className="text-xs font-semibold uppercase tracking-wider text-slate-400 mr-2 block sm:inline">Designed For:</span>
+              {targetAudience.map((aud) => (
+                <span
+                  key={aud}
+                  className="px-3 py-1 rounded-full bg-space-900 border border-slate-800 text-xs font-medium text-slate-300"
+                >
+                  {aud}
+                </span>
+              ))}
+            </div>
+          )}
 
           {/* 2. Sleek Interactive Product UI Mockup (Laptop / Device Frame) */}
           <div className="relative pt-6 max-w-5xl mx-auto group">
@@ -195,16 +204,16 @@ export default function ProductDetailPage() {
                 <div className="absolute top-6 left-6 hidden sm:flex items-center gap-2 px-3.5 py-2 rounded-xl bg-space-900/90 border border-purple-500/40 text-xs font-medium text-white shadow-2xl backdrop-blur-md">
                   <Zap className="w-4 h-4 text-purple-400" />
                   <div>
-                    <div className="font-bold text-white text-[11px]">{product.metrics[0]?.label || "High Scale"}</div>
-                    <div className="text-[10px] text-slate-400">{product.metrics[0]?.value || "10x Performance"}</div>
+                    <div className="font-bold text-white text-[11px]">{metrics[0]?.label || "High Scale"}</div>
+                    <div className="text-[10px] text-slate-400">{metrics[0]?.value || "10x Performance"}</div>
                   </div>
                 </div>
 
                 <div className="absolute bottom-6 left-6 hidden sm:flex items-center gap-2 px-3.5 py-2 rounded-xl bg-space-900/90 border border-cyan-500/40 text-xs font-medium text-white shadow-2xl backdrop-blur-md">
                   <TrendingUp className="w-4 h-4 text-cyan-400" />
                   <div>
-                    <div className="font-bold text-white text-[11px]">{product.metrics[1]?.label || "Real-Time Telemetry"}</div>
-                    <div className="text-[10px] text-slate-400">{product.metrics[1]?.value || "<150ms Latency"}</div>
+                    <div className="font-bold text-white text-[11px]">{metrics[1]?.label || "Real-Time Telemetry"}</div>
+                    <div className="text-[10px] text-slate-400">{metrics[1]?.value || "<150ms Latency"}</div>
                   </div>
                 </div>
 
@@ -316,7 +325,7 @@ export default function ProductDetailPage() {
         )}
 
         {/* 6. UNBOXED ELEGANT FEATURE SHOWCASE (NO CARDS - UNBOXED MODERN LAYOUT) */}
-        {product.detailedFeatures && product.detailedFeatures.length > 0 ? (
+        {detailedFeatures.length > 0 ? (
           <div className="space-y-16 pt-10 border-t border-slate-800/80">
             
             {/* Header */}
@@ -331,7 +340,7 @@ export default function ProductDetailPage() {
               
               {/* Interactive Feature Switcher Bar */}
               <div className="flex flex-wrap items-center justify-center gap-2 pt-4">
-                {product.detailedFeatures.map((feat, idx) => (
+                {detailedFeatures.map((feat, idx) => (
                   <button
                     key={feat.id}
                     onClick={() => {
@@ -354,12 +363,12 @@ export default function ProductDetailPage() {
 
             {/* Seamless Alternating Feature Rows (NO CARD BOX ENCLOSURE) */}
             <div className="space-y-20 sm:space-y-28">
-              {product.detailedFeatures.map((feat, idx) => (
+              {detailedFeatures.map((feat, idx) => (
                 <div
                   key={feat.id}
                   id={`feature-module-${feat.id}`}
                   className={`grid grid-cols-1 lg:grid-cols-12 gap-12 sm:gap-16 items-center py-6 relative ${
-                    idx !== (product.detailedFeatures?.length ?? 0) - 1 ? "border-b border-slate-800/50 pb-20 sm:pb-28" : ""
+                    idx !== detailedFeatures.length - 1 ? "border-b border-slate-800/50 pb-20 sm:pb-28" : ""
                   }`}
                 >
                   
@@ -385,13 +394,18 @@ export default function ProductDetailPage() {
                     
                     {/* Highlight Items Grid */}
                     <div className="space-y-4 pt-2">
-                      {feat.highlights.map((h, i) => (
+                      {(feat.highlights || []).map((h, i) => (
                         <div key={i} className="flex items-start gap-3.5 group">
                           <div className="w-7 h-7 rounded-lg bg-purple-500/10 border border-purple-500/30 text-purple-400 flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-purple-600 group-hover:text-white transition-all">
                             <Check className="w-4 h-4" />
                           </div>
                           <div>
-                            <div className="text-xs sm:text-sm font-bold text-white font-heading">{h}</div>
+                            <div className="text-xs sm:text-sm font-bold text-white font-heading">
+                              {typeof h === "string" ? h : (h && typeof h === "object" && "title" in h ? (h as any).title : String(h || ""))}
+                            </div>
+                            {h && typeof h === "object" && "text" in h && (h as any).text && (
+                              <div className="text-xs text-slate-400 leading-relaxed mt-0.5">{(h as any).text}</div>
+                            )}
                           </div>
                         </div>
                       ))}
@@ -458,21 +472,23 @@ export default function ProductDetailPage() {
           </div>
         ) : (
           /* General Features Fallback */
-          <div className="py-12 border-t border-slate-800/80 space-y-6">
-            <h3 className="text-2xl font-bold font-heading text-white">Platform Capabilities & Core Features</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {product.features.map((f) => (
-                <div key={f} className="flex items-start gap-3 text-sm text-slate-300">
-                  <CheckCircle2 className="w-4 h-4 text-purple-400 shrink-0 mt-0.5" />
-                  <span>{f}</span>
-                </div>
-              ))}
+          features.length > 0 && (
+            <div className="py-12 border-t border-slate-800/80 space-y-6">
+              <h3 className="text-2xl font-bold font-heading text-white">Platform Capabilities & Core Features</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {features.map((f) => (
+                  <div key={f} className="flex items-start gap-3 text-sm text-slate-300">
+                    <CheckCircle2 className="w-4 h-4 text-purple-400 shrink-0 mt-0.5" />
+                    <span>{f}</span>
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
+          )
         )}
 
         {/* 7. PACKAGE CARDS / PRICING TIERS */}
-        {product.packageCards && product.packageCards.length > 0 && (
+        {packageCards.length > 0 && (
           <div className="space-y-10 pt-8 border-t border-slate-800/80">
             <div className="text-center max-w-2xl mx-auto space-y-3">
               <Badge variant="purple">Transparent Licensing</Badge>
@@ -484,8 +500,8 @@ export default function ProductDetailPage() {
               </p>
             </div>
 
-            <div className={`grid grid-cols-1 ${product.packageCards.length > 1 ? "md:grid-cols-2 lg:grid-cols-3" : "max-w-md mx-auto"} gap-8`}>
-              {product.packageCards.map((pkg) => (
+            <div className={`grid grid-cols-1 ${packageCards.length > 1 ? "md:grid-cols-2 lg:grid-cols-3" : "max-w-md mx-auto"} gap-8`}>
+              {packageCards.map((pkg) => (
                 <div
                   key={pkg.id}
                   className={`glass-card p-8 rounded-3xl border flex flex-col justify-between relative ${
@@ -512,7 +528,7 @@ export default function ProductDetailPage() {
                     </div>
 
                     <div className="space-y-3 pt-4 border-t border-slate-800">
-                      {pkg.featuresIncluded.map((f) => (
+                      {(pkg.featuresIncluded || []).map((f) => (
                         <div key={f} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-300">
                           <CheckCircle2 className="w-4 h-4 text-purple-400 shrink-0 mt-0.5" />
                           <span>{f}</span>
@@ -537,13 +553,13 @@ export default function ProductDetailPage() {
         )}
 
         {/* 8. FAQs */}
-        {product.faqList && product.faqList.length > 0 && (
+        {faqList.length > 0 && (
           <div className="glass-card p-8 sm:p-12 rounded-3xl border border-slate-800 bg-space-900 space-y-6">
             <h3 className="text-2xl font-bold font-heading text-white flex items-center gap-2">
               <HelpCircle className="w-6 h-6 text-purple-400" /> Frequently Asked Questions
             </h3>
             <div className="space-y-4">
-              {product.faqList.map((faq) => (
+              {faqList.map((faq) => (
                 <div key={faq.question} className="p-5 rounded-2xl bg-space-950 border border-slate-800 space-y-2">
                   <h4 className="text-base font-bold text-white">{faq.question}</h4>
                   <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">{faq.answer}</p>
