@@ -290,8 +290,50 @@ export const SERVICES: ServiceItem[] = [
         answer: "We spend 3 days interviewing key stakeholders, auditing data pipelines, and presenting a prioritized list of high-ROI AI use cases with exact cost estimates."
       }
     ]
+  },
+  {
+    id: "drone-technology",
+    slug: "drone-technology",
+    title: "Autonomous Drone Technology",
+    tagline: "AI flight autonomy, LiDAR mapping, thermal inspection & edge aerial robotics.",
+    shortDescription: "We engineer autonomous UAV telemetry platforms, computer vision defect inspection, LiDAR 3D photogrammetry, and real-time aerial surveillance systems.",
+    fullDescription: "Innovtec delivers end-to-end autonomous drone and aerial robotics systems. From edge AI on NVIDIA Jetson for real-time visual inspection to BVLOS waypoint navigation, automated docking stations, and cloud photogrammetry pipelines, we enable enterprises to deploy smart drones at industrial scale.",
+    iconName: "Navigation",
+    category: "Autonomous Robotics",
+    businessProblems: [
+      "Hazardous manual inspections of wind turbines, high-voltage grids, and industrial bridges",
+      "Labor-intensive land surveying, volumetrics, and agricultural crop health monitoring",
+      "Perimeter security blind spots without automated 24/7 autonomous patrol coverage",
+      "Massive raw aerial video feeds lacking automated AI anomaly detection"
+    ],
+    capabilities: [
+      "Autonomous Waypoint Navigation & Beyond Visual Line of Sight (BVLOS)",
+      "Edge AI Aerial Computer Vision & Real-Time Defect Detection",
+      "LiDAR 3D Point Cloud Processing & Orthomosaic Photogrammetry",
+      "Thermal & Multispectral Sensor Pipeline Integration",
+      "Encrypted 5G/LTE Real-Time Telemetry & Video Streaming",
+      "Drone-in-a-Box Automated Docking Station Integration"
+    ],
+    deliverables: [
+      "Onboard Edge AI Inference Package (NVIDIA Jetson / PX4 / ROS 2)",
+      "Cloud Geospatial Drone Fleet Management Dashboard",
+      "Automated 3D Photogrammetry & Orthomosaic Engine",
+      "Enterprise Hardware Integration & MAVLink Telemetry Bridge"
+    ],
+    techStack: ["PX4 Autopilot", "ROS 2", "NVIDIA Jetson", "MAVLink", "OpenCV", "PyTorch", "WebRTC", "QGIS", "DJI SDK", "Rust"],
+    faqs: [
+      {
+        question: "Can your drone AI software run offline without cloud connectivity?",
+        answer: "Yes, our computer vision models execute directly on-device on NVIDIA Jetson edge computers mounted on the UAV for sub-10ms real-time obstacle avoidance and defect detection."
+      },
+      {
+        question: "Which autopilots and hardware platforms do you support?",
+        answer: "We engineer for PX4, ArduPilot, custom industrial multirotor/VTOL airframes, and enterprise DJI platforms via Mobile & Onboard SDKs."
+      }
+    ]
   }
 ];
+
 
 export const PRODUCTS: ProductItem[] = [
   {

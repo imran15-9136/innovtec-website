@@ -18,7 +18,9 @@ export type ServiceCategory =
   | "Cyber Security"
   | "Digital Transformation"
   | "AI Automation"
-  | "Product Engineering";
+  | "Product Engineering"
+  | "Autonomous Robotics";
+
 
 export interface ServiceItem {
   id: string;

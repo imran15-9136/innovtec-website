@@ -1,10 +1,23 @@
 import type { Metadata } from "next";
+import { Inter, Space_Grotesk } from "next/font/google";
 import "@/app/globals.css";
 import { AppProvider } from "@/context/AppContext";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { ConsultationModal } from "@/components/layout/ConsultationModal";
 import { AskInnovtecAI } from "@/components/layout/AskInnovtecAI";
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
+
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  variable: "--font-space-grotesk",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: {
@@ -53,8 +66,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
-      <body className="bg-space-950 text-slate-100 antialiased selection:bg-brand-blue selection:text-white">
+    <html lang="en" className={`dark ${inter.variable} ${spaceGrotesk.variable}`}>
+      <body className="bg-space-950 text-slate-100 antialiased selection:bg-brand-blue selection:text-white font-sans">
         <AppProvider>
           <Header />
           {children}

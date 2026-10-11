@@ -9,10 +9,10 @@ import {
   Github, 
   Linkedin, 
   Twitter, 
-  Lock,
   Phone,
   Mail,
-  MapPin
+  MapPin,
+  Lock
 } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { Logo } from "@/components/ui/Logo";
@@ -22,7 +22,7 @@ export const Footer: React.FC = () => {
   const [email, setEmail] = useState("");
   const [subscribed, setSubscribed] = useState(false);
 
-  // Hide public footer on admin sub-routes
+  // Don't render public footer on admin sub-routes
   if (pathname.startsWith("/admin")) {
     return null;
   }
@@ -31,56 +31,54 @@ export const Footer: React.FC = () => {
     e.preventDefault();
     if (email) {
       setSubscribed(true);
-      setTimeout(() => {
-        setEmail("");
-      }, 2000);
+      setEmail("");
     }
   };
 
   return (
-    <footer className="bg-space-950 border-t border-slate-800/80 pt-16 pb-12 relative overflow-hidden">
-      {/* Subtle Background Glow */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/4 h-64 bg-brand-blue/5 rounded-full blur-3xl pointer-events-none" />
+    <footer className="bg-space-950 border-t border-white/[0.06] pt-16 pb-12 text-slate-300 relative overflow-hidden">
+      
+      {/* Subtle top ambient glow */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-24 bg-brand-blue/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Top Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-16 border-b border-slate-800/80">
+        {/* Top Section: Brand + Newsletter */}
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 pb-12 border-b border-white/[0.06]">
           
-          {/* Brand Info (2 cols) */}
+          {/* Brand Info & Contact */}
           <div className="lg:col-span-2 space-y-5">
-            <Logo height={32} />
-
+            <Logo height={28} />
             <p className="text-sm text-slate-400 max-w-sm leading-relaxed">
-              Engineering Intelligent Digital Solutions. Positioning enterprise organizations for AI-first digital leadership through modern software, cloud, and cyber engineering.
+              AI-first software engineering company building intelligent, resilient enterprise systems and scalable digital platforms worldwide.
             </p>
 
-            {/* Contact Quick Highlights */}
-            <div className="space-y-2 pt-1 text-xs text-slate-300">
-              <div className="flex items-center gap-2">
-                <Phone className="w-3.5 h-3.5 text-brand-cyan shrink-0" />
-                <a href="tel:+8801773893339" className="hover:text-white font-mono transition-colors">+880 1773-893339</a>
+            <div className="space-y-2.5 text-xs text-slate-400 pt-1">
+              <div className="flex items-center gap-2.5">
+                <MapPin className="w-4 h-4 text-brand-cyan shrink-0" />
+                <span>Mirpur DOHS, Dhaka, Bangladesh</span>
               </div>
-              <div className="flex items-center gap-2">
-                <Mail className="w-3.5 h-3.5 text-brand-cyan shrink-0" />
-                <a href="mailto:info@innovtec.it.com" className="hover:text-white font-mono transition-colors">info@innovtec.it.com</a>
+              <div className="flex items-center gap-2.5">
+                <Mail className="w-4 h-4 text-brand-cyan shrink-0" />
+                <a href="mailto:contact@innovtec.co" className="hover:text-white transition-colors">
+                  contact@innovtec.co
+                </a>
               </div>
-              <div className="flex items-start gap-2 pt-1 text-[11px] text-slate-400">
-                <MapPin className="w-3.5 h-3.5 text-purple-400 shrink-0 mt-0.5" />
-                <span>
-                  <strong>Dhaka:</strong> House 26/A, Level 4,5, Uttara, Dhaka – 1230<br />
-                  <strong>UK:</strong> Wellesley House, 102 Cranbrook Rd, Ilford IG1 4NH
-                </span>
+              <div className="flex items-center gap-2.5">
+                <Phone className="w-4 h-4 text-brand-cyan shrink-0" />
+                <a href="tel:+8801700000000" className="hover:text-white transition-colors">
+                  +880 1700-000000
+                </a>
               </div>
             </div>
 
-            {/* Newsletter Subscription Form */}
-            <div className="space-y-2 pt-2">
-              <label className="text-xs font-mono text-slate-300 uppercase tracking-wider block">
-                Subscribe to AI & Engineering Insights
-              </label>
+            {/* Newsletter */}
+            <div className="pt-2">
+              <div className="text-xs font-semibold text-slate-200 uppercase tracking-wider mb-2 font-mono">
+                Subscribe to Engineering Dispatch
+              </div>
               {subscribed ? (
-                <div className="flex items-center gap-2 p-3 bg-brand-emerald/10 border border-brand-emerald/30 rounded-lg text-emerald-400 text-xs">
+                <div className="flex items-center gap-2 text-xs text-emerald-400 py-2">
                   <CheckCircle2 className="w-4 h-4" />
                   <span>Thank you for subscribing! Check your inbox soon.</span>
                 </div>
@@ -92,7 +90,7 @@ export const Footer: React.FC = () => {
                     placeholder="enter.your@email.com"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="flex-1 bg-space-900 border border-slate-700/80 rounded-lg px-3.5 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-brand-cyan transition-colors"
+                    className="flex-1 bg-space-900 border border-white/[0.08] rounded-xl px-3.5 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-brand-cyan transition-colors"
                   />
                   <Button type="submit" variant="gradient" size="sm" icon={<Send className="w-3.5 h-3.5" />}>
                     Join
@@ -102,15 +100,15 @@ export const Footer: React.FC = () => {
             </div>
 
             {/* Live System Status */}
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-space-900 border border-slate-800 text-[11px] text-slate-400">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-space-900/80 border border-white/[0.06] text-[11px] text-slate-400">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
               <span>All Systems Operational (99.99% SLA)</span>
             </div>
           </div>
 
-          {/* Column 1: Services */}
+          {/* Column 1: Capabilities */}
           <div className="space-y-4">
-            <h4 className="text-sm font-semibold font-heading text-white uppercase tracking-wider">
+            <h4 className="text-xs font-semibold font-mono text-white uppercase tracking-wider">
               Capabilities
             </h4>
             <ul className="space-y-2.5 text-xs text-slate-400">
@@ -152,9 +150,9 @@ export const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Column 2: Products */}
+          {/* Column 2: Products & Trust */}
           <div className="space-y-4">
-            <h4 className="text-sm font-semibold font-heading text-white uppercase tracking-wider">
+            <h4 className="text-xs font-semibold font-mono text-white uppercase tracking-wider">
               Products & Trust
             </h4>
             <ul className="space-y-2.5 text-xs text-slate-400">
@@ -196,9 +194,9 @@ export const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Column 3: Company */}
+          {/* Column 3: Company & Legal */}
           <div className="space-y-4">
-            <h4 className="text-sm font-semibold font-heading text-white uppercase tracking-wider">
+            <h4 className="text-xs font-semibold font-mono text-white uppercase tracking-wider">
               Company & Legal
             </h4>
             <ul className="space-y-2.5 text-xs text-slate-400">
@@ -210,7 +208,7 @@ export const Footer: React.FC = () => {
               <li>
                 <Link href="/careers" className="hover:text-brand-cyan transition-colors flex items-center gap-1.5">
                   Careers
-                  <span className="px-1.5 py-0.2 rounded bg-brand-emerald/20 text-emerald-400 text-[10px]">
+                  <span className="px-1.5 py-0.5 rounded bg-emerald-500/15 text-emerald-400 text-[10px]">
                     We're hiring
                   </span>
                 </Link>
@@ -242,6 +240,7 @@ export const Footer: React.FC = () => {
               </li>
             </ul>
           </div>
+
         </div>
 
         {/* Bottom Metadata & Social */}
@@ -251,20 +250,20 @@ export const Footer: React.FC = () => {
           </div>
 
           <div className="flex flex-wrap items-center gap-4 sm:gap-6">
-            <a href="https://github.com" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">
+            <a href="https://github.com" target="_blank" rel="noreferrer" className="hover:text-white transition-colors" title="GitHub">
               <Github className="w-4 h-4" />
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">
+            <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="hover:text-white transition-colors" title="LinkedIn">
               <Linkedin className="w-4 h-4" />
             </a>
-            <a href="https://twitter.com" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">
+            <a href="https://twitter.com" target="_blank" rel="noreferrer" className="hover:text-white transition-colors" title="Twitter">
               <Twitter className="w-4 h-4" />
             </a>
             <span className="text-slate-700">|</span>
-            <Link href="/privacy-policy" className="hover:text-slate-300">Privacy Policy</Link>
-            <Link href="/compliance-policy" className="hover:text-slate-300">Compliance Policy</Link>
-            <Link href="/terms-and-conditions" className="hover:text-slate-300">Terms & Conditions</Link>
-            <Link href="/gdpr-compliance" className="hover:text-slate-300">GDPR Compliance</Link>
+            <Link href="/privacy-policy" className="hover:text-slate-300 transition-colors">Privacy Policy</Link>
+            <Link href="/compliance-policy" className="hover:text-slate-300 transition-colors">Compliance</Link>
+            <Link href="/terms-and-conditions" className="hover:text-slate-300 transition-colors">Terms</Link>
+            <Link href="/gdpr-compliance" className="hover:text-slate-300 transition-colors">GDPR</Link>
           </div>
         </div>
 

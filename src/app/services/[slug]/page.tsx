@@ -37,8 +37,8 @@ export default function ServiceDetailPage() {
   }
 
   return (
-    <div className="pt-28 pb-20 bg-space-950 min-h-screen">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="pt-28 pb-20 bg-[#040711] min-h-screen text-white">
+      <div className="w-full max-w-[1780px] 2xl:max-w-[1920px] mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 2xl:px-20">
         
         {/* Back Link */}
         <Link href="/services" className="inline-flex items-center gap-2 text-xs font-semibold text-slate-400 hover:text-white mb-8 transition-colors">
