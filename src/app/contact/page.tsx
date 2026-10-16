@@ -95,6 +95,7 @@ export default function ContactPage() {
                   <label className="text-xs font-medium text-slate-300 block mb-1">Primary Area of Interest</label>
                   <select value={serviceCategory} onChange={(e) => setServiceCategory(e.target.value)} className="w-full bg-space-950 border border-slate-700/80 rounded-lg px-3 py-2 text-xs text-white">
                     <option value="Artificial Intelligence">Artificial Intelligence & RAG</option>
+                    <option value="Autonomous Drone Technology">Autonomous Drone Technology</option>
                     <option value="Custom Software Development">Custom Software Development</option>
                     <option value="Cloud Engineering">Cloud Engineering & FinOps</option>
                     <option value="DevOps">DevOps & SRE Services</option>

@@ -34,7 +34,17 @@ import {
   TrendingUp,
   BarChart3,
   CheckSquare,
-  ChevronRight
+  ChevronRight,
+  MessageSquare,
+  Bot,
+  Send,
+  Smartphone,
+  CheckCheck,
+  Share2,
+  MessageCircle,
+  UserCheck,
+  Headphones,
+  RotateCcw
 } from "lucide-react";
 
 export function InnovCRMProductPage() {
@@ -43,6 +53,79 @@ export function InnovCRMProductPage() {
   const [isPlayingVideo, setIsPlayingVideo] = useState(false);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [activeFeatureIdx, setActiveFeatureIdx] = useState<number>(0);
+
+  // Omnichannel Simulator State
+  const [selectedChannel, setSelectedChannel] = useState<"whatsapp" | "instagram" | "messenger" | "ai_agent">("whatsapp");
+  const [isAiMode, setIsAiMode] = useState<boolean>(true);
+  const [chatInput, setChatInput] = useState<string>("");
+  const [customMessages, setCustomMessages] = useState<Record<string, Array<{ sender: "student" | "ai" | "counselor"; text: string; time: string }>>>({
+    whatsapp: [
+      { sender: "student", text: "Hi! I completed my BBA with CGPA 3.4. Can I apply for MSc International Business in the UK for Sept 2026 intake without IELTS?", time: "10:14 AM" },
+      { sender: "ai", text: "Hello Tanvir! 👋 Yes, several partner UK universities (e.g. Coventry, Portsmouth, Bedfordshire) accept MOI (Medium of Instruction) if your HSC English is 70%+ or degree was taught in English. Otherwise, an IELTS 6.0 or PTE 54 qualifies you. What is your preferred location and budget?", time: "10:14 AM" },
+      { sender: "student", text: "I prefer London or Birmingham, budget around £14,000–£16,000 after scholarship.", time: "10:15 AM" },
+      { sender: "ai", text: "Excellent! We have 3 partner universities with up to £3,000 automatic scholarships fitting your £14k budget. 🎯 I've logged your profile in InnovCRM and notified Sarah Jenkins (UK Senior Counselor). Can you share your Bachelor transcript so we can issue an instant conditional offer?", time: "10:15 AM" }
+    ],
+    instagram: [
+      { sender: "student", text: "Saw your story on Canada 2026 PGWP rules! I have a 3-year Bachelor degree. Can I still qualify for 3-year PGWP in Ontario or Vancouver?", time: "11:02 AM" },
+      { sender: "ai", text: "Hi Nusrat! ✨ Under current IRCC guidelines, graduates of eligible university Master's and specific public college diploma programs qualify for up to 3 years PGWP. Have you already taken IELTS or PTE?", time: "11:02 AM" },
+      { sender: "student", text: "Yes! Got IELTS 6.5 overall with no band less than 6.0.", time: "11:03 AM" },
+      { sender: "ai", text: "Fantastic score! An IELTS 6.5 qualifies you for direct admission into Ontario public universities without pre-sessional English courses. 🍁 Can you provide your email? I will send your personalized university shortlist directly to your inbox.", time: "11:03 AM" },
+      { sender: "student", text: "nusrat.jahan@gmail.com, thank you so much!", time: "11:04 AM" }
+    ],
+    messenger: [
+      { sender: "student", text: "I clicked your Facebook Ad about Australia Subclass 500 Visa. What is the application deadline for July 2026 intake?", time: "02:18 PM" },
+      { sender: "ai", text: "Hello Rahim! 🇦🇺 For Australian Group of Eight (Go8) and ATN universities for July 2026 intake, applications close between April 30 and May 15. Genuine Student (GS) statements take ~2 weeks to prepare.", time: "02:18 PM" },
+      { sender: "student", text: "Can I apply with a 3-year study gap after graduation?", time: "02:19 PM" },
+      { sender: "ai", text: "Yes! With valid work experience certificates, pay slips, and tax documents, a 3-year gap is acceptable for High Commission compliance. I've automatically tagged your profile as 'High Priority' and notified Amina Rahman at our Australia desk.", time: "02:19 PM" }
+    ],
+    ai_agent: [
+      { sender: "ai", text: "🤖 InnovCRM Autonomous AI Admissions Agent: ONLINE (v2.6 Engine)\n• Simultaneous Active Sessions: 42 prospective students across WhatsApp, Instagram & Messenger\n• Average Response Latency: 0.42 seconds\n• Multi-Language Support: English, Bengali, Hindi, Arabic\n• Leads Auto-Created in InnovCRM Today: 128 students\n• Live University Knowledge Base: 1,500+ programs across UK, EU, AU, CA, US, NZ", time: "Live Telemetry" },
+      { sender: "ai", text: "⚡ Real-Time Action: Incoming Instagram DM from @kamrul_uk asking for Coventry University January intake MBA requirements. AI Agent verified IELTS criteria and curriculum. Profile auto-created in InnovCRM under Lead ID #UK-9842.", time: "Just now" }
+    ]
+  });
+
+  const handleSendSimulation = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!chatInput.trim()) return;
+
+    const newMsg = {
+      sender: "student" as const,
+      text: chatInput,
+      time: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })
+    };
+
+    const currentChannel = selectedChannel;
+    setCustomMessages((prev) => ({
+      ...prev,
+      [currentChannel]: [...(prev[currentChannel] || []), newMsg]
+    }));
+
+    setChatInput("");
+
+    // Simulate AI Agent instant intelligent response
+    setTimeout(() => {
+      let replyText = "Thank you! InnovCRM's AI Agent has analyzed your question against international university guidelines and automatically synchronized this thread with your dedicated counselor.";
+      const lower = newMsg.text.toLowerCase();
+      if (lower.includes("ielts") || lower.includes("pte") || lower.includes("english")) {
+        replyText = "Our AI verified: Most UK/Canada universities require IELTS 6.0–6.5 (or PTE 54–62). Many UK universities also accept Medium of Instruction (MOI) waivers. I've updated your eligibility record in InnovCRM!";
+      } else if (lower.includes("scholarship") || lower.includes("cost") || lower.includes("fee")) {
+        replyText = "Scholarships range from £1,500 up to £5,000 for international students based on previous academic GPA. Your assigned counselor will share the scholarship application matrix shortly.";
+      } else if (lower.includes("visa") || lower.includes("cas") || lower.includes("offer")) {
+        replyText = "Offer letters are typically processed within 48 to 72 hours through our direct partner university portals. Visa checklists have been auto-assigned to your profile.";
+      }
+
+      const botMsg = {
+        sender: isAiMode ? ("ai" as const) : ("counselor" as const),
+        text: replyText,
+        time: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })
+      };
+
+      setCustomMessages((prev) => ({
+        ...prev,
+        [currentChannel]: [...(prev[currentChannel] || []), botMsg]
+      }));
+    }, 600);
+  };
 
   const targetCountries = [
     { name: "United Kingdom", flag: "🇬🇧" },
@@ -90,6 +173,8 @@ export function InnovCRMProductPage() {
         "Full Student Application Pipeline",
         "Automated Sub-Agent Commission Engine",
         "Dedicated Student & Agent Self-Service Portals",
+        "Omnichannel Inbox: WhatsApp, Instagram DMs & Messenger",
+        "24/7 Autonomous AI Admissions Agent (Auto Lead Capture)",
         "Advanced Financial & Commission Analytics",
         "Custom Subdomain (youragency.innovcrm.ai)",
         "Priority 24/7 Technical Support",
@@ -108,6 +193,8 @@ export function InnovCRMProductPage() {
         "Unlimited Staff & Counselor Users",
         "Dedicated Private AWS Cloud Cluster",
         "Custom University API Integrations",
+        "Fine-Tuned AI Agent (Agency Brand Voice & Policy)",
+        "Enterprise Meta & WhatsApp Cloud API Volume Scaling",
         "Whitelabel Branding & Custom Domain",
         "SLA Uptime Guarantee (99.99%)",
         "Staff Training & Onsite Onboarding"
@@ -162,15 +249,15 @@ export function InnovCRMProductPage() {
     {
       id: "feat-crm-4",
       step: "04",
-      badge: "Social Media & Chat Suite",
-      title: "Omnichannel Social Media & Instant Messaging Integration",
-      description: "Connect Facebook Lead Ads, Instagram Direct, WhatsApp Business API, Telegram Bots, and LinkedIn Messaging into one unified counselor inbox. Automatically capture, sync, and respond to social leads in real time.",
+      badge: "Omnichannel & AI Agent",
+      title: "Omnichannel Conversations (Instagram, Messenger, WhatsApp) & 24/7 AI Agent",
+      description: "Unite Instagram Direct DMs, Facebook Messenger, Facebook Lead Ads, WhatsApp Business API, and website chat into a unified counselor inbox powered by an autonomous 24/7 AI Admissions Agent that qualifies students and answers admission questions in seconds.",
       image: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=1200",
       accentColor: "from-blue-500 to-indigo-500",
       highlights: [
-        { title: "Facebook & Instagram Lead Sync", text: "Instant real-time lead capture from Facebook and Instagram lead ad campaigns into counselor pipelines." },
-        { title: "WhatsApp Business API & Telegram", text: "Automate student application status alerts, visa checklist reminders, and CAS updates via WhatsApp & Telegram." },
-        { title: "LinkedIn & Unified Team Inbox", text: "Manage sub-agent partnerships and student inquiries across all social channels in one team dashboard." }
+        { title: "Multi-Platform Central Inbox", text: "Counselors respond to Instagram DMs, Messenger chats, and WhatsApp threads in one unified workspace with zero app switching." },
+        { title: "Autonomous 24/7 AI Admissions Agent", text: "AI instantly answers course entry requirements, IELTS rules, and intake deadlines, qualifies student intent, and auto-creates complete student profiles in InnovCRM." },
+        { title: "Smart Counselor Routing & Handoff", text: "Seamlessly routes qualified student chats to country-specialist counselors (UK, Canada, Australia) with full conversation history and instant desktop alerts." }
       ]
     }
   ];
@@ -564,6 +651,326 @@ export function InnovCRMProductPage() {
 
               </div>
             ))}
+          </div>
+
+        </div>
+
+        {/* 6.5. OMNICHANNEL CONVERSATIONS & AI AGENT SHOWCASE */}
+        <div className="space-y-12 pt-16 border-t border-slate-800/80">
+          
+          {/* Section Header */}
+          <div className="text-center max-w-3xl mx-auto space-y-4">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-mono font-bold">
+              <MessageCircle className="w-4 h-4 text-emerald-400" />
+              <span>OMNICHANNEL MESSAGING & 24/7 AI AGENT</span>
+            </div>
+
+            <h2 className="text-3xl sm:text-5xl font-extrabold font-heading text-white tracking-tight leading-tight">
+              Unified Social Conversations <br className="hidden sm:inline" />
+              <span className="bg-gradient-to-r from-emerald-400 via-cyan-400 to-purple-400 bg-clip-text text-transparent">
+                + Autonomous AI Admissions Agent
+              </span>
+            </h2>
+
+            <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-normal">
+              Capture and converse with prospective students across <strong>WhatsApp, Instagram Direct, Facebook Messenger</strong>, and website lead ads in one central counselor screen with 24/7 zero-latency AI qualification.
+            </p>
+          </div>
+
+          {/* Interactive Live Simulator Frame */}
+          <div className="glass-card rounded-3xl border border-slate-800 bg-space-900/90 shadow-2xl overflow-hidden p-6 sm:p-8">
+            
+            {/* Top Toolbar: Channel Tabs + Mode Toggle */}
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-slate-800">
+              
+              {/* Channel Selector Pills */}
+              <div className="flex flex-wrap items-center gap-2">
+                <button
+                  type="button"
+                  onClick={() => setSelectedChannel("whatsapp")}
+                  className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all ${
+                    selectedChannel === "whatsapp"
+                      ? "bg-emerald-600 text-white shadow-lg shadow-emerald-600/30 ring-2 ring-emerald-400/50"
+                      : "bg-space-950 border border-slate-800 text-slate-300 hover:text-white"
+                  }`}
+                >
+                  <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
+                  <span>WhatsApp Business</span>
+                  <span className="px-1.5 py-0.5 rounded text-[10px] bg-emerald-500/20 text-emerald-300 font-mono">Meta</span>
+                </button>
+
+                <button
+                  type="button"
+                  onClick={() => setSelectedChannel("instagram")}
+                  className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all ${
+                    selectedChannel === "instagram"
+                      ? "bg-gradient-to-r from-pink-600 to-purple-600 text-white shadow-lg shadow-pink-600/30 ring-2 ring-pink-400/50"
+                      : "bg-space-950 border border-slate-800 text-slate-300 hover:text-white"
+                  }`}
+                >
+                  <span className="w-2.5 h-2.5 rounded-full bg-pink-400" />
+                  <span>Instagram Direct</span>
+                  <span className="px-1.5 py-0.5 rounded text-[10px] bg-pink-500/20 text-pink-300 font-mono">DMs & Stories</span>
+                </button>
+
+                <button
+                  type="button"
+                  onClick={() => setSelectedChannel("messenger")}
+                  className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all ${
+                    selectedChannel === "messenger"
+                      ? "bg-blue-600 text-white shadow-lg shadow-blue-600/30 ring-2 ring-blue-400/50"
+                      : "bg-space-950 border border-slate-800 text-slate-300 hover:text-white"
+                  }`}
+                >
+                  <span className="w-2.5 h-2.5 rounded-full bg-blue-400" />
+                  <span>Facebook Messenger</span>
+                  <span className="px-1.5 py-0.5 rounded text-[10px] bg-blue-500/20 text-blue-300 font-mono">Lead Ads</span>
+                </button>
+
+                <button
+                  type="button"
+                  onClick={() => setSelectedChannel("ai_agent")}
+                  className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all ${
+                    selectedChannel === "ai_agent"
+                      ? "bg-purple-600 text-white shadow-lg shadow-purple-600/30 ring-2 ring-purple-400/50"
+                      : "bg-space-950 border border-slate-800 text-slate-300 hover:text-white"
+                  }`}
+                >
+                  <Bot className="w-4 h-4 text-purple-400" />
+                  <span>AI Agent Telemetry</span>
+                  <span className="px-1.5 py-0.5 rounded text-[10px] bg-purple-500/20 text-purple-300 font-mono">24/7 Engine</span>
+                </button>
+              </div>
+
+              {/* AI Auto-Pilot Switch */}
+              <div className="flex items-center gap-3 bg-space-950 px-3 py-1.5 rounded-xl border border-slate-800 shrink-0">
+                <span className="text-xs font-mono text-slate-400 flex items-center gap-1.5">
+                  <Bot className="w-3.5 h-3.5 text-purple-400" />
+                  <span>AI Autopilot:</span>
+                </span>
+                <button
+                  type="button"
+                  onClick={() => setIsAiMode(!isAiMode)}
+                  className={`px-3 py-1 rounded-lg text-xs font-bold font-mono transition-all ${
+                    isAiMode 
+                      ? "bg-emerald-500/20 text-emerald-400 border border-emerald-500/40" 
+                      : "bg-amber-500/20 text-amber-400 border border-amber-500/40"
+                  }`}
+                >
+                  {isAiMode ? "ON (Instant <1s Replies)" : "OFF (Counselor Manual)"}
+                </button>
+              </div>
+
+            </div>
+
+            {/* Split Grid: Conversation Feed (Left/Center) + CRM Profile Snapshot (Right) */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 pt-6">
+              
+              {/* Chat Thread Panel (7 Cols) */}
+              <div className="lg:col-span-7 flex flex-col bg-space-950 rounded-2xl border border-slate-800 overflow-hidden shadow-inner">
+                
+                {/* Chat Topbar */}
+                <div className="px-4 py-3 bg-space-900 border-b border-slate-800 flex items-center justify-between">
+                  <div className="flex items-center gap-3">
+                    <div className="w-9 h-9 rounded-full bg-gradient-to-tr from-purple-600 to-cyan-500 flex items-center justify-center text-white text-xs font-bold">
+                      {selectedChannel === "whatsapp" && "WA"}
+                      {selectedChannel === "instagram" && "IG"}
+                      {selectedChannel === "messenger" && "FB"}
+                      {selectedChannel === "ai_agent" && "AI"}
+                    </div>
+                    <div>
+                      <div className="text-xs font-bold text-white flex items-center gap-2">
+                        {selectedChannel === "whatsapp" && "Tanvir Ahmed • WhatsApp Cloud API"}
+                        {selectedChannel === "instagram" && "@nusrat_jahan99 • Instagram DM"}
+                        {selectedChannel === "messenger" && "Rahim Chowdhury • FB Messenger"}
+                        {selectedChannel === "ai_agent" && "InnovCRM Multi-Model AI Router"}
+                        <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                      </div>
+                      <div className="text-[10px] text-slate-400 font-mono">
+                        {isAiMode ? "AI Admissions Agent Engaged • Auto-Sync to CRM" : "Counselor Manual Takeover Active"}
+                      </div>
+                    </div>
+                  </div>
+
+                  <span className="px-2.5 py-1 rounded-full text-[10px] font-mono bg-purple-500/10 text-purple-300 border border-purple-500/20">
+                    Live Demo
+                  </span>
+                </div>
+
+                {/* Message Bubble Stream */}
+                <div className="p-4 space-y-3.5 h-80 overflow-y-auto bg-space-950/80">
+                  {customMessages[selectedChannel]?.map((msg, idx) => (
+                    <div
+                      key={idx}
+                      className={`flex flex-col ${
+                        msg.sender === "student" ? "items-start" : "items-end"
+                      }`}
+                    >
+                      <div className="flex items-center gap-1.5 mb-1 px-1">
+                        <span className="text-[10px] font-mono text-slate-500">
+                          {msg.sender === "student" ? "Prospective Student" : msg.sender === "ai" ? "🤖 InnovCRM AI Agent" : "👤 Senior Counselor"}
+                        </span>
+                        <span className="text-[9px] text-slate-600">{msg.time}</span>
+                      </div>
+                      <div
+                        className={`max-w-[85%] rounded-2xl px-3.5 py-2.5 text-xs leading-relaxed ${
+                          msg.sender === "student"
+                            ? "bg-space-900 border border-slate-800 text-slate-200"
+                            : msg.sender === "ai"
+                            ? "bg-purple-950/70 border border-purple-500/40 text-purple-100 shadow-md shadow-purple-950/30"
+                            : "bg-blue-950/70 border border-blue-500/40 text-blue-100"
+                        }`}
+                      >
+                        <p className="whitespace-pre-line">{msg.text}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Interactive Simulated Input Form */}
+                <form onSubmit={handleSendSimulation} className="p-3 bg-space-900 border-t border-slate-800 flex items-center gap-2">
+                  <input
+                    type="text"
+                    value={chatInput}
+                    onChange={(e) => setChatInput(e.target.value)}
+                    placeholder={
+                      selectedChannel === "whatsapp"
+                        ? "Ask about UK scholarships or IELTS waivers..."
+                        : selectedChannel === "instagram"
+                        ? "Reply to student's Instagram query..."
+                        : "Type student admission question..."
+                    }
+                    className="flex-1 bg-space-950 border border-slate-700/80 rounded-xl px-3 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-purple-400"
+                  />
+                  <Button type="submit" variant="gradient" size="sm" icon={<Send className="w-3.5 h-3.5" />}>
+                    Send
+                  </Button>
+                </form>
+
+              </div>
+
+              {/* Live InnovCRM Lead Profile Sync Card (5 Cols) */}
+              <div className="lg:col-span-5 flex flex-col justify-between p-5 rounded-2xl bg-space-950 border border-slate-800 space-y-4">
+                <div className="space-y-4">
+                  
+                  {/* Lead Header */}
+                  <div className="flex items-center justify-between pb-3 border-b border-slate-800">
+                    <div className="flex items-center gap-2">
+                      <UserCheck className="w-4 h-4 text-emerald-400" />
+                      <span className="text-xs font-bold text-white font-heading">
+                        Auto-Enriched InnovCRM Lead
+                      </span>
+                    </div>
+                    <span className="px-2 py-0.5 rounded text-[10px] font-mono bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-semibold">
+                      Profile Synced
+                    </span>
+                  </div>
+
+                  {/* Profile Attributes Extracted by AI */}
+                  <div className="space-y-2 text-xs">
+                    <div className="flex items-center justify-between p-2 rounded-lg bg-space-900 border border-slate-800">
+                      <span className="text-slate-400 font-mono text-[11px]">Primary Channel:</span>
+                      <span className="font-bold text-white capitalize flex items-center gap-1">
+                        {selectedChannel === "whatsapp" && "🟢 WhatsApp Cloud API"}
+                        {selectedChannel === "instagram" && "📸 Instagram Direct"}
+                        {selectedChannel === "messenger" && "💬 Facebook Messenger"}
+                        {selectedChannel === "ai_agent" && "⚡ Omnichannel Stream"}
+                      </span>
+                    </div>
+
+                    <div className="flex items-center justify-between p-2 rounded-lg bg-space-900 border border-slate-800">
+                      <span className="text-slate-400 font-mono text-[11px]">Country Preference:</span>
+                      <span className="font-semibold text-cyan-400">
+                        {selectedChannel === "whatsapp" ? "United Kingdom (Sept 2026)" : selectedChannel === "instagram" ? "Canada (PGWP Eligible)" : "Australia (July 2026)"}
+                      </span>
+                    </div>
+
+                    <div className="flex items-center justify-between p-2 rounded-lg bg-space-900 border border-slate-800">
+                      <span className="text-slate-400 font-mono text-[11px]">AI Qualification Score:</span>
+                      <span className="font-mono font-bold text-emerald-400">92 / 100 (High Conversion)</span>
+                    </div>
+
+                    <div className="flex items-center justify-between p-2 rounded-lg bg-space-900 border border-slate-800">
+                      <span className="text-slate-400 font-mono text-[11px]">Assigned Counselor:</span>
+                      <span className="font-medium text-slate-200">
+                        {selectedChannel === "whatsapp" ? "Sarah Jenkins (UK Senior)" : selectedChannel === "instagram" ? "David Miller (Canada Visa)" : "Amina Rahman (Australia Desk)"}
+                      </span>
+                    </div>
+
+                    <div className="flex items-center justify-between p-2 rounded-lg bg-space-900 border border-slate-800">
+                      <span className="text-slate-400 font-mono text-[11px]">Document Status:</span>
+                      <span className="px-2 py-0.5 rounded text-[10px] bg-purple-500/10 text-purple-300 border border-purple-500/20">
+                        Passport Verified • Transcript Pending
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* AI Summary Banner */}
+                  <div className="p-3 rounded-xl bg-purple-950/30 border border-purple-500/20 space-y-1">
+                    <div className="text-[11px] font-bold text-purple-300 flex items-center gap-1.5 font-mono">
+                      <Sparkles className="w-3.5 h-3.5 text-purple-400" /> AI Intent Summary
+                    </div>
+                    <p className="text-[11px] text-slate-300 leading-relaxed">
+                      "Student demonstrated verified intent for post-graduate admissions. AI answered English eligibility and suggested scholarship programs. Lead ready for counselor final offer submission."
+                    </p>
+                  </div>
+
+                </div>
+
+                {/* Quick Action Button */}
+                <Button
+                  variant="gradient"
+                  size="sm"
+                  className="w-full text-xs"
+                  onClick={() => openConsultationModal("InnovCRM Omnichannel & AI Agent Demo")}
+                  icon={<ExternalLink className="w-3.5 h-3.5" />}
+                >
+                  Test Omnichannel In Your Agency Demo
+                </Button>
+
+              </div>
+
+            </div>
+
+            {/* 4 Multi-Channel Value Pillars */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-8 mt-6 border-t border-slate-800">
+              <div className="p-4 rounded-xl bg-space-950 border border-slate-800 space-y-1.5">
+                <div className="text-xs font-bold text-emerald-400 font-heading flex items-center gap-1.5">
+                  <Smartphone className="w-4 h-4 text-emerald-400" /> WhatsApp Business API
+                </div>
+                <p className="text-[11px] text-slate-400 leading-relaxed">
+                  Official verified number integration for automated visa reminders, CAS letter alerts, and two-way applicant chat.
+                </p>
+              </div>
+
+              <div className="p-4 rounded-xl bg-space-950 border border-slate-800 space-y-1.5">
+                <div className="text-xs font-bold text-pink-400 font-heading flex items-center gap-1.5">
+                  <Share2 className="w-4 h-4 text-pink-400" /> Instagram Direct & Stories
+                </div>
+                <p className="text-[11px] text-slate-400 leading-relaxed">
+                  Converts Instagram story views, reel comments, and DM inquiries into qualified leads directly in InnovCRM.
+                </p>
+              </div>
+
+              <div className="p-4 rounded-xl bg-space-950 border border-slate-800 space-y-1.5">
+                <div className="text-xs font-bold text-blue-400 font-heading flex items-center gap-1.5">
+                  <MessageSquare className="w-4 h-4 text-blue-400" /> Facebook Messenger & Ads
+                </div>
+                <p className="text-[11px] text-slate-400 leading-relaxed">
+                  Seamlessly connects Meta Lead Ads with instant Messenger conversations and automatic counselor dispatch.
+                </p>
+              </div>
+
+              <div className="p-4 rounded-xl bg-space-950 border border-slate-800 space-y-1.5">
+                <div className="text-xs font-bold text-purple-400 font-heading flex items-center gap-1.5">
+                  <Bot className="w-4 h-4 text-purple-400" /> Autonomous 24/7 AI Agent
+                </div>
+                <p className="text-[11px] text-slate-400 leading-relaxed">
+                  Trained on 1,500+ university criteria and visa checklists to answer admission questions in &lt;1 second around the clock.
+                </p>
+              </div>
+            </div>
+
           </div>
 
         </div>

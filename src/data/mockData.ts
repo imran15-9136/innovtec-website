@@ -351,6 +351,8 @@ export const PRODUCTS: ProductItem[] = [
       "Reference Counselor Assignment & Multi-Branch Hierarchy",
       "Dedicated Self-Service Student Portal & Agent Portal",
       "Real-Time Application Tracking & Country-Wise Compliance Rules",
+      "Omnichannel Conversations: Instagram Direct, Facebook Messenger & WhatsApp Business API",
+      "Autonomous 24/7 AI Admissions Agent for Instant Student Qualification & Lead Capture",
       "Email Integration, Real-Time Notifications & Automated Lead Follow-ups"
     ],
     targetAudience: [
@@ -361,9 +363,9 @@ export const PRODUCTS: ProductItem[] = [
     ],
     techStack: ["ASP.NET Core API", "Angular Frontend", "MS SQL Server", "Amazon Web Services (AWS)", "S3 Compatible Blob Storage"],
     metrics: [
-      { label: "Social Channels", value: "FB, IG, WA, TG, LI" },
-      { label: "Sub-Agent Commission Processing", value: "100% Automated" },
-      { label: "Client Server Deployment", value: "Never (AWS SaaS Managed)" }
+      { label: "Social & Chat Channels", value: "WhatsApp, IG, Messenger" },
+      { label: "AI Response Latency", value: "<0.8s 24/7" },
+      { label: "Sub-Agent Commission Processing", value: "100% Automated" }
     ],
     demoUrl: "https://innovcrm.innovtec.ai",
     screenshots: [
@@ -411,13 +413,13 @@ export const PRODUCTS: ProductItem[] = [
       },
       {
         id: "feat-4",
-        title: "Omnichannel Social Media & Messaging Integration",
-        description: "Connect Facebook Lead Ads, Instagram Direct, WhatsApp Business API, Telegram Bots, and LinkedIn Messaging into a unified counselor inbox for instant student engagement.",
+        title: "Omnichannel Conversations (Instagram, Messenger, WhatsApp) & AI Agent",
+        description: "Unite Instagram Direct DMs, Facebook Messenger, WhatsApp Business API, and Lead Ads into a unified counselor inbox powered by an autonomous 24/7 AI Admissions Agent.",
         image: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=800",
         highlights: [
-          "Facebook & Instagram lead ad auto-synchronization",
-          "WhatsApp & Telegram automated status notifications",
-          "LinkedIn prospective student and sub-agent inbox"
+          "Unified inbox for WhatsApp, Instagram DMs, and Messenger with zero app switching",
+          "24/7 Autonomous AI Agent answers admission FAQs and auto-qualifies students",
+          "Instant counselor desktop alerts and lead profile auto-synchronization"
         ]
       }
     ],
@@ -458,6 +460,8 @@ export const PRODUCTS: ProductItem[] = [
           "Full Student Application Pipeline",
           "Automated Sub-Agent Commission Engine",
           "Dedicated Student & Agent Self-Service Portals",
+          "Omnichannel Inbox: WhatsApp, Instagram DMs & Messenger",
+          "24/7 Autonomous AI Admissions Agent (Auto Lead Capture)",
           "Advanced Financial & Commission Analytics",
           "Custom Subdomain (youragency.innovcrm.ai)",
           "Priority 24/7 Technical Support",
@@ -713,6 +717,159 @@ export const PRODUCTS: ProductItem[] = [
           "24/7 Monitoring & Alerting"
         ],
         ctaText: "Get Started with PulseNotify"
+      }
+    ]
+  },
+  {
+    id: "leading-edge-erp",
+    slug: "leading-edge-erp",
+    name: "Leading Edge ERP",
+    tagline: "Integrated Industrial ERP for RMG Garments, Footwear & Multi-Plant Manufacturing",
+    description: "End-to-end manufacturing and commercial ERP engineered specifically for apparel & garment factories, shoe & footwear manufacturers, merchandising, financial accounting, inventory, sales distribution, and export-import (commercial LC) operations.",
+    fullDescription: "Leading Edge ERP is an enterprise-grade cloud ERP platform purpose-built for apparel (RMG), footwear, and industrial manufacturing plants. From fast-paced merchandising, multi-level BOM costing, and cutting/sewing/assembly shop floor control to automated double-entry accounting, warehouse inventory, order sales, and customs/commercial export-import LC management, it unifies your entire manufacturing enterprise in real time.",
+    badge: "Industrial Manufacturing ERP",
+    status: "Live",
+    features: [
+      "Garments & Apparel Manufacturing: Style Master, Cutting Room, Bundle Barcoding, Sewing Line Balancing & Finishing",
+      "Footwear & Shoe Factory Suite: Last/Mould Tracking, Size-Color Assortment, Lasting, Stitching & Sole Assembly",
+      "Merchandising & Costing: Pre-Order Costing, Consumption Planning, Buyer PO & T&A (Time & Action) Calendar",
+      "Financial Accounting & Costing: Double-Entry GL, AP/AR, Cost Center Budgeting & Audit-Ready Financial Statements",
+      "Inventory & Raw Materials: Fabric Roll Inspection (4-Point), Leather & Hardware Stocks, Bin Locations & MRP",
+      "Commercial Export & Import: Master LC, Back-to-Back LC, Proforma Invoices, Customs Docs & Shipping Logistics",
+      "Sales & Distribution: Buyer Order Tracking, Dispatch Packaging Lists, Local & Global Export Invoicing"
+    ],
+    targetAudience: [
+      "Ready-Made Garments (RMG) Manufacturers",
+      "Shoe & Footwear Factories",
+      "Textile, Knitting & Dyeing Mills",
+      "Apparel Buying Houses & Trading Conglomerates",
+      "Industrial Manufacturing Exporters"
+    ],
+    techStack: [
+      "ASP.NET Core 8",
+      "Angular 18",
+      "PostgreSQL",
+      "Redis Cache",
+      "Docker & Kubernetes",
+      "Amazon Web Services (AWS)",
+      "PowerBI Embedded"
+    ],
+    metrics: [
+      { label: "Shop Floor Efficiency", value: "+34%" },
+      { label: "Fabric & Material Waste", value: "-18%" },
+      { label: "On-Time Order Shipment", value: "99.2%" }
+    ],
+    demoUrl: "https://leadingedge.innovtec.ai",
+    screenshots: [
+      "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1200",
+      "https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?q=80&w=1200",
+      "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1200"
+    ],
+    demoVideo: {
+      thumbnailUrl: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1200",
+      title: "Leading Edge ERP Industrial Production, Merchandising & Commercial LC Demo",
+      duration: "5:20 min demo"
+    },
+    detailedFeatures: [
+      {
+        id: "feat-le-1",
+        title: "Garments (RMG) & Footwear Production Engine",
+        description: "Granular shop floor control from pattern making and automated fabric/leather cutting to bundle barcode scanning, sewing line balancing, lasting, sole vulcanization, and AQL quality inspection.",
+        image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800",
+        highlights: [
+          "Barcode & RFID bundle ticket tracking across sewing and lasting lines",
+          "Real-time hourly production monitoring and bottleneck alerts",
+          "Size-color matrix management for multi-variant styles and moulds"
+        ]
+      },
+      {
+        id: "feat-le-2",
+        title: "Merchandising, Costing & T&A Management",
+        description: "Complete buyer lifecycle management with instant pre-costing, multi-level Bill of Materials (BOM), consumption calculations, and dynamic Time & Action (T&A) milestone tracking.",
+        image: "https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?q=80&w=800",
+        highlights: [
+          "Accurate fabric/leather/trims consumption calculation",
+          "Buyer PO tracking with style revisions and approval workflows",
+          "Automated critical path T&A calendar with delay alerts"
+        ]
+      },
+      {
+        id: "feat-le-3",
+        title: "Commercial Export-Import & Back-to-Back LC",
+        description: "Purpose-built for export-oriented factories. Automate Master LC intake, issue supplier Back-to-Back LCs, manage Proforma Invoices (PI), shipping documents, and customs clearance.",
+        image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=800",
+        highlights: [
+          "Master LC vs. Back-to-Back LC balance & limit monitoring",
+          "Commercial invoice, packing list & bill of lading generation",
+          "Real-time port clearance, vessel ETA & foreign remittance tracking"
+        ]
+      },
+      {
+        id: "feat-le-4",
+        title: "Integrated Accounting & Inventory Warehousing",
+        description: "Seamless double-entry accounting connected directly to production and procurement. Track raw material inventory with bin-location precision and 4-point fabric inspection.",
+        image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800",
+        highlights: [
+          "General Ledger, Accounts Payable/Receivable & Cost Center P&L",
+          "Roll-wise fabric inspection with defect point mapping",
+          "Real-time FIFO/Weighted Average stock valuation & reorder triggers"
+        ]
+      }
+    ],
+    packageCards: [
+      {
+        id: "pkg-le-1",
+        name: "Single Plant Standard",
+        price: "$699",
+        billingPeriod: "per month / billed annually",
+        description: "For independent garment factories or shoe manufacturing facilities with up to 10 production lines.",
+        popular: false,
+        featuresIncluded: [
+          "Up to 25 Concurrent ERP Users",
+          "Complete RMG & Footwear Production Tracking",
+          "Merchandising & Pre-Costing Modules",
+          "Core Financial Accounting & General Ledger",
+          "Inventory & Store Management",
+          "Commercial Export-Import Basics",
+          "Barcode Bundle Scanning Support",
+          "Cloud Hosted on AWS with Daily Backups"
+        ],
+        ctaText: "Schedule Factory Demo"
+      },
+      {
+        id: "pkg-le-2",
+        name: "Multi-Plant Enterprise",
+        price: "$1,899",
+        billingPeriod: "per month / billed annually",
+        description: "For export conglomerates operating multi-unit manufacturing facilities, dyeing mills, and central commercial offices.",
+        popular: true,
+        badge: "Industry Standard",
+        featuresIncluded: [
+          "Unlimited Concurrent ERP Users",
+          "Multi-Factory Centralized Orchestration",
+          "Advanced Merchandising & Critical Path T&A",
+          "Comprehensive Commercial LC & Customs Logistics",
+          "Multi-Currency Automated Accounting & Cost Centers",
+          "Roll-Wise 4-Point Fabric Quality System",
+          "Real-Time Line Efficiency & Hourly Dashboards",
+          "Dedicated Solutions Architect & On-Site Onboarding",
+          "99.99% Uptime SLA Guarantee"
+        ],
+        ctaText: "Request Enterprise Proposal"
+      }
+    ],
+    faqList: [
+      {
+        question: "Does Leading Edge ERP support both Garments (RMG) and Footwear plants?",
+        answer: "Yes. Leading Edge ERP has dedicated modules for both industries. For garments, it includes marker planning, fabric roll inspection, and sewing line balancing. For shoe factories, it manages lasts, mould matrices, upper stitching, lasting, and sole vulcanization."
+      },
+      {
+        question: "Can it handle complex Export-Import and Back-to-Back LC banking?",
+        answer: "Yes, commercial banking is a core strength. The system tracks Master LC limits, generates Proforma Invoices (PI), creates Back-to-Back LCs for suppliers, manages shipping documentation, and tracks foreign exchange payment realization."
+      },
+      {
+        question: "Can shop floor workers use barcode scanners offline if internet drops?",
+        answer: "Yes. The shop floor bundle scanning stations have local edge buffering. If factory connectivity fluctuates, scans are cached locally and synchronized with the cloud automatically when restored."
       }
     ]
   }

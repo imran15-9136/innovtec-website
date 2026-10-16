@@ -24,7 +24,8 @@ export const ProductsSection: React.FC = () => {
   const [activeFilter, setActiveFilter] = useState("all");
 
   const categories = [
-    { id: "all", label: "All Platforms (4)" },
+    { id: "all", label: `All Platforms (${PRODUCTS.length})` },
+    { id: "erp", label: "Industrial & ERP" },
     { id: "ai", label: "AI & Automation" },
     { id: "edtech", label: "EdTech & CRM" },
     { id: "infra", label: "Developer Infra" }
@@ -32,6 +33,7 @@ export const ProductsSection: React.FC = () => {
 
   const filteredProducts = PRODUCTS.filter((p) => {
     if (activeFilter === "all") return true;
+    if (activeFilter === "erp") return p.id.includes("erp") || p.id.includes("leading-edge");
     if (activeFilter === "ai") return p.id.includes("ai");
     if (activeFilter === "edtech") return p.id.includes("crm") || p.id.includes("student");
     if (activeFilter === "infra") return p.id.includes("notification");
@@ -40,6 +42,12 @@ export const ProductsSection: React.FC = () => {
 
   // Custom accent themes for each product
   const productAccents: Record<string, { border: string; glow: string; text: string; badgeBg: string }> = {
+    "leading-edge-erp": {
+      border: "group-hover:border-blue-500/50",
+      glow: "from-blue-500/10 via-transparent to-transparent",
+      text: "text-blue-400",
+      badgeBg: "bg-blue-500/10 text-blue-300 border-blue-500/20"
+    },
     "innov-crm": {
       border: "group-hover:border-emerald-500/50",
       glow: "from-emerald-500/10 via-transparent to-transparent",

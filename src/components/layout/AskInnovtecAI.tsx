@@ -82,11 +82,17 @@ export const AskInnovtecAI: React.FC = () => {
       } else if (lower.includes("crm") || lower.includes("innovcrm")) {
         aiResponseText = "### InnovCRM Platform Highlights\n\nInnovCRM is our proprietary AI-Powered CRM featuring:\n1. Autonomous Lead Scoring & Prospect Discovery\n2. AI Meeting Summarization & Action Item Extraction\n3. Omnichannel Messaging (Email, WhatsApp, LinkedIn)\n\nWould you like a live demo sandbox account?";
         options = ["Request InnovCRM Sandbox", "Book Consultation"];
+      } else if (lower.includes("erp") || lower.includes("garment") || lower.includes("shoe") || lower.includes("leading edge") || lower.includes("merchandising") || lower.includes("apparel")) {
+        aiResponseText = "### Leading Edge ERP (Garments & Footwear Industrial Suite)\n\nInnovtec's **Leading Edge ERP** is purpose-built for RMG apparel and shoe/footwear manufacturing plants:\n- **Garments & Footwear Production**: Pattern cutting, bundle barcoding, sewing line balancing, lasting, sole assembly & AQL quality control\n- **Merchandising & T&A**: Pre-order costing, multi-level BOM consumption & critical path Time & Action calendar\n- **Commercial Export-Import**: Master LC, Back-to-Back LC, Proforma Invoices, customs documentation & vessel logistics\n- **Financials & Inventory**: Real-time double-entry GL, cost center P&L, 4-point fabric roll inspection & warehouse MRP.\n\nWould you like to schedule an industrial factory demonstration?";
+        options = ["Schedule ERP Factory Demo", "Explore Leading Edge ERP", "Commercial LC Features"];
+      } else if (lower.includes("drone") || lower.includes("uav") || lower.includes("aerial") || lower.includes("robotics")) {
+        aiResponseText = "### Autonomous Drone & Aerial Robotics Engineering\n\nInnovtec develops industrial autonomous UAV software and telemetry:\n- **Edge AI Computer Vision**: Real-time defect detection running on NVIDIA Jetson\n- **Flight Autonomy**: BVLOS waypoint navigation, PX4/ROS 2 integration & fail-safe return\n- **Geospatial Processing**: 3D LiDAR point-clouds, thermal sensors & automated photogrammetry\n- **Fleet Operations**: Real-time 5G/LTE telemetry and automated docking stations.";
+        options = ["Schedule Drone Consultation", "Explore Drone Architecture", "Ask About Edge AI"];
       } else if (lower.includes("book") || lower.includes("consultation") || lower.includes("schedule")) {
         aiResponseText = "I can immediately prepare your consultation request for our engineering director! Would you like me to open our interactive booking calendar?";
         actionLink = { label: "Open Booking Form", href: "#consultation" };
       } else {
-        aiResponseText = `Thank you for your question about **"${text}"**. At Innovtec, we specialize in Artificial Intelligence, Custom Software Development, Cloud Engineering, DevOps, IoT, and Cyber Security.\n\nOur team has delivered 100+ enterprise platforms with measurable ROI. How can we support your technology roadmap today?`;
+        aiResponseText = `Thank you for your question about **"${text}"**. At Innovtec, we specialize in Artificial Intelligence, Autonomous Drone Technology, Custom Software Development, Cloud Engineering, DevOps, IoT, and Cyber Security.\n\nOur team has delivered 100+ enterprise platforms with measurable ROI. How can we support your technology roadmap today?`;
         options = ["Book Free Discovery Call", "View Engineering Services", "Browse Case Studies"];
       }
 

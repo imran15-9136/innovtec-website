@@ -53,21 +53,28 @@ export const Footer: React.FC = () => {
               AI-first software engineering company building intelligent, resilient enterprise systems and scalable digital platforms worldwide.
             </p>
 
-            <div className="space-y-2.5 text-xs text-slate-400 pt-1">
-              <div className="flex items-center gap-2.5">
-                <MapPin className="w-4 h-4 text-brand-cyan shrink-0" />
-                <span>Mirpur DOHS, Dhaka, Bangladesh</span>
+            <div className="space-y-3 text-xs text-slate-400 pt-1">
+              <div className="flex items-start gap-2.5">
+                <MapPin className="w-4 h-4 text-brand-cyan shrink-0 mt-0.5" />
+                <div className="space-y-1">
+                  <div>
+                    <span className="text-slate-300 font-medium">Head Office:</span> House 26/A, Level 4,5, Uttara, Dhaka – 1230
+                  </div>
+                  <div className="text-[11px] text-slate-500">
+                    <span className="text-slate-400 font-medium">UK Office:</span> Wellesley House, 102 Cranbrook Road, Ilford IG1 4NH, UK
+                  </div>
+                </div>
               </div>
               <div className="flex items-center gap-2.5">
                 <Mail className="w-4 h-4 text-brand-cyan shrink-0" />
-                <a href="mailto:contact@innovtec.co" className="hover:text-white transition-colors">
-                  contact@innovtec.co
+                <a href="mailto:info@innovtec.it.com" className="hover:text-white transition-colors">
+                  info@innovtec.it.com
                 </a>
               </div>
               <div className="flex items-center gap-2.5">
                 <Phone className="w-4 h-4 text-brand-cyan shrink-0" />
-                <a href="tel:+8801700000000" className="hover:text-white transition-colors">
-                  +880 1700-000000
+                <a href="tel:+8801773893339" className="hover:text-white transition-colors">
+                  +880 1773-893339
                 </a>
               </div>
             </div>
@@ -118,6 +125,11 @@ export const Footer: React.FC = () => {
                 </Link>
               </li>
               <li>
+                <Link href="/services/drone-technology" className="hover:text-brand-cyan transition-colors">
+                  Autonomous Drone Tech
+                </Link>
+              </li>
+              <li>
                 <Link href="/services/custom-software-development" className="hover:text-brand-cyan transition-colors">
                   Custom Software Dev
                 </Link>
@@ -159,6 +171,11 @@ export const Footer: React.FC = () => {
               <li>
                 <Link href="/products/innov-crm" className="hover:text-brand-cyan transition-colors">
                   InnovCRM
+                </Link>
+              </li>
+              <li>
+                <Link href="/products/leading-edge-erp" className="hover:text-brand-cyan transition-colors">
+                  Leading Edge ERP
                 </Link>
               </li>
               <li>
