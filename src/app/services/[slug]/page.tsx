@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { useParams, notFound } from "next/navigation";
+import { useParams, notFound, redirect } from "next/navigation";
 import Link from "next/link";
 import { SERVICES } from "@/data/mockData";
 import { Badge } from "@/components/ui/Badge";
@@ -22,6 +22,14 @@ export default function ServiceDetailPage() {
   const params = useParams();
   const slug = params?.slug as string;
   const { openConsultationModal, openAIModal } = useApp();
+
+  // Redirect to dedicated specialized pages
+  if (slug === "drone-technology") {
+    redirect("/services/drone-technology");
+  }
+  if (slug === "artificial-intelligence") {
+    redirect("/services/artificial-intelligence");
+  }
 
   const service = SERVICES.find((s) => s.slug === slug);
 
