@@ -37,7 +37,7 @@ export const TestimonialsSection: React.FC = () => {
           <Badge variant="emerald" className="mb-4">
             Verified Executive Feedback
           </Badge>
-          <h2 className="text-3xl sm:text-5xl font-extrabold font-heading text-white tracking-tight">
+          <h2 className="text-3xl sm:text-5xl font-extrabold font-heading text-slate-50 tracking-tight">
             Trusted by <span className="text-gradient-blue">Technology Leaders</span>
           </h2>
           <p className="mt-4 text-base sm:text-lg text-slate-300">
@@ -72,7 +72,7 @@ export const TestimonialsSection: React.FC = () => {
                   className="w-10 h-10 rounded-full object-cover border border-slate-700"
                 />
                 <div>
-                  <div className="text-sm font-bold text-white font-heading">{t.author}</div>
+                  <div className="text-sm font-bold text-slate-100 font-heading">{t.author}</div>
                   <div className="text-xs text-slate-400">{t.role}</div>
                 </div>
               </div>

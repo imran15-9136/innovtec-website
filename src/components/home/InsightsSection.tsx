@@ -16,7 +16,7 @@ export const InsightsSection: React.FC = () => {
             <Badge variant="cyan" className="mb-4">
               Thought Leadership & Whitepapers
             </Badge>
-            <h2 className="text-3xl sm:text-5xl font-extrabold font-heading text-white tracking-tight">
+            <h2 className="text-3xl sm:text-5xl font-extrabold font-heading text-slate-50 tracking-tight">
               Engineering <span className="text-gradient-cyan">Insights</span>
             </h2>
             <p className="mt-4 text-base text-slate-300 max-w-xl">
@@ -56,7 +56,7 @@ export const InsightsSection: React.FC = () => {
                     <span className="flex items-center gap-1"><Clock className="w-3 h-3" /> {art.readTime}</span>
                   </div>
 
-                  <h3 className="text-lg font-bold font-heading text-white group-hover:text-brand-cyan transition-colors leading-snug line-clamp-2">
+                  <h3 className="text-lg font-bold font-heading text-slate-100 group-hover:text-brand-cyan transition-colors leading-snug line-clamp-2">
                     {art.title}
                   </h3>
 

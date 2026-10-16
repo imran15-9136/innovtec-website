@@ -45,7 +45,7 @@ export const HumanAISection: React.FC = () => {
           </span>
         </div>
 
-        <h2 className="text-3xl sm:text-5xl font-extrabold font-heading text-white tracking-tight leading-tight">
+        <h2 className="text-3xl sm:text-5xl font-extrabold font-heading text-slate-50 tracking-tight leading-tight">
           Synergy of Domain Experts & <br />
           <span className="text-gradient-cyan">Autonomous AI Intelligence</span>
         </h2>

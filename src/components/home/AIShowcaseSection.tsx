@@ -74,7 +74,7 @@ export const AIShowcaseSection: React.FC = () => {
           <Badge variant="cyan" className="mb-4">
             AI Engineering Showcase
           </Badge>
-          <h2 className="text-3xl sm:text-5xl font-extrabold font-heading text-white tracking-tight">
+          <h2 className="text-3xl sm:text-5xl font-extrabold font-heading text-slate-50 tracking-tight">
             Next-Generation <span className="text-gradient-cyan">AI Capabilities</span>
           </h2>
           <p className="mt-4 text-base sm:text-lg text-slate-300">
@@ -113,7 +113,7 @@ export const AIShowcaseSection: React.FC = () => {
               <span>{current.title} Module</span>
             </div>
 
-            <h3 className="text-2xl sm:text-3xl font-bold font-heading text-white">
+            <h3 className="text-2xl sm:text-3xl font-bold font-heading text-slate-50">
               {current.tagline}
             </h3>
 

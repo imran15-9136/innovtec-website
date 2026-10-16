@@ -33,7 +33,7 @@ export const ProcessTimelineSection: React.FC = () => {
           <Badge variant="cyan" className="mb-4">
             Structured Agile Execution
           </Badge>
-          <h2 className="text-3xl sm:text-5xl font-extrabold font-heading text-white tracking-tight">
+          <h2 className="text-3xl sm:text-5xl font-extrabold font-heading text-slate-50 tracking-tight">
             Our 8-Step <span className="text-gradient-cyan">Engineering Lifecycle</span>
           </h2>
           <p className="mt-4 text-base sm:text-lg text-slate-300">
@@ -59,7 +59,7 @@ export const ProcessTimelineSection: React.FC = () => {
                   </div>
                 </div>
 
-                <h3 className="text-lg font-bold font-heading text-white mb-2">
+                <h3 className="text-lg font-bold font-heading text-slate-100 mb-2">
                   {step.title}
                 </h3>
 

@@ -27,7 +27,7 @@ export default function InsightDetailPage() {
   }
 
   return (
-    <div className="pt-28 pb-20 bg-space-950 min-h-screen">
+    <div className="pt-36 sm:pt-40 pb-24 bg-space-950 min-h-screen">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <Link href="/insights" className="inline-flex items-center gap-2 text-xs font-semibold text-slate-400 hover:text-white mb-8 transition-colors">

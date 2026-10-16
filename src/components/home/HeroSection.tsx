@@ -75,7 +75,7 @@ export const HeroSection: React.FC = () => {
   const active = slides[currentSlide];
 
   return (
-    <section className="relative min-h-[85vh] sm:min-h-[90vh] flex items-center pt-20 pb-16 overflow-hidden bg-[#050811] text-white w-full select-none">
+    <section className="relative min-h-[90vh] sm:min-h-[94vh] flex flex-col justify-center pt-32 sm:pt-36 lg:pt-40 pb-20 sm:pb-24 overflow-hidden bg-[#0C1424] text-white w-full select-none">
       
       {/* 1. Full-Width Background Slides with Smooth Fade */}
       {slides.map((s, idx) => (
@@ -88,19 +88,19 @@ export const HeroSection: React.FC = () => {
           <img
             src={s.image}
             alt={s.alt}
-            className="w-full h-full object-cover object-top sm:object-[85%_0%] filter contrast-110 brightness-105"
+            className="w-full h-full object-cover object-top sm:object-[85%_0%]"
           />
           
           {/* Crisp Gradient Masks for clean readability */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#050811] via-[#050811]/90 to-transparent sm:w-[60%]" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#050811] via-transparent to-[#050811]/70" />
-          <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#050811] to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0C1424] via-[#0C1424]/88 to-transparent sm:w-[60%]" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0C1424] via-transparent to-[#0C1424]/65" />
+          <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#0C1424] to-transparent" />
         </div>
       ))}
 
       {/* 2. Ambient Soft Glows */}
-      <div className="absolute top-1/4 left-10 w-96 h-96 bg-brand-blue/15 rounded-full blur-[140px] pointer-events-none z-0" />
-      <div className="absolute top-1/3 right-1/4 w-80 h-80 bg-brand-cyan/10 rounded-full blur-[130px] pointer-events-none z-0" />
+      <div className="absolute top-1/4 left-10 w-96 h-96 bg-brand-blue/8 rounded-full blur-[160px] pointer-events-none z-0" />
+      <div className="absolute top-1/3 right-1/4 w-80 h-80 bg-brand-cyan/6 rounded-full blur-[150px] pointer-events-none z-0" />
 
       {/* 3. Clean Full-Width Content Container */}
       <div className="w-full max-w-[1780px] 2xl:max-w-[1920px] mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 2xl:px-20 relative z-10">
@@ -116,7 +116,7 @@ export const HeroSection: React.FC = () => {
           </div>
 
           {/* Clean, Impactful Title */}
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold font-heading text-white tracking-tight leading-[1.14]">
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold font-heading text-slate-50 tracking-tight leading-[1.14]">
             {active.titlePrefix} <br />
             <span className="text-gradient-cyan">
               {active.titleHighlight}

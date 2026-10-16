@@ -67,7 +67,7 @@ export default function ProductDetailPage() {
     : "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1600";
 
   return (
-    <div className="pt-24 pb-24 bg-space-950 min-h-screen text-slate-100 relative overflow-hidden">
+    <div className="pt-36 sm:pt-40 pb-24 bg-space-950 min-h-screen text-slate-100 relative overflow-hidden">
       
       {/* Background Radial Glow Effects */}
       <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-purple-600/15 rounded-full blur-[140px] pointer-events-none z-0" />

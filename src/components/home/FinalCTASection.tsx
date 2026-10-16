@@ -23,7 +23,7 @@ export const FinalCTASection: React.FC = () => {
             <span>Ready to Accelerate Growth?</span>
           </div>
 
-          <h2 className="text-3xl sm:text-5xl font-extrabold font-heading text-white tracking-tight leading-tight">
+          <h2 className="text-3xl sm:text-5xl font-extrabold font-heading text-slate-50 tracking-tight leading-tight">
             Let's Build the <span className="text-gradient-blue">Future Together</span>
           </h2>
 

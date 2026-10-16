@@ -7,7 +7,7 @@ import { ArrowLeft, ShieldCheck, CheckCircle2, Award, Lock, FileCheck } from "lu
 
 export default function CompliancePolicyPage() {
   return (
-    <div className="pt-28 pb-20 bg-space-950 min-h-screen">
+    <div className="pt-36 sm:pt-40 pb-24 bg-space-950 min-h-screen">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
         
         <Link href="/" className="inline-flex items-center gap-2 text-xs font-semibold text-slate-400 hover:text-white transition-colors">

@@ -75,11 +75,11 @@ export const ProductsSection: React.FC = () => {
   };
 
   return (
-    <section className="py-24 sm:py-28 bg-[#030610] relative overflow-hidden text-white border-t border-white/[0.06]">
+    <section className="py-24 sm:py-28 bg-[#090F1E] relative overflow-hidden text-white border-t border-white/[0.05]">
       
       {/* Background ambient lighting */}
-      <div className="absolute top-1/3 left-10 w-[500px] h-[500px] bg-brand-purple/10 rounded-full blur-[180px] pointer-events-none" />
-      <div className="absolute bottom-10 right-10 w-[500px] h-[500px] bg-brand-cyan/10 rounded-full blur-[180px] pointer-events-none" />
+      <div className="absolute top-1/3 left-10 w-[500px] h-[500px] bg-brand-purple/6 rounded-full blur-[200px] pointer-events-none" />
+      <div className="absolute bottom-10 right-10 w-[500px] h-[500px] bg-brand-cyan/6 rounded-full blur-[200px] pointer-events-none" />
 
       <div className="w-full max-w-[1780px] 2xl:max-w-[1920px] mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 2xl:px-20 relative z-10">
         
@@ -90,7 +90,7 @@ export const ProductsSection: React.FC = () => {
               <Sparkles className="w-3.5 h-3.5" />
               <span>Proprietary SaaS Ecosystem</span>
             </div>
-            <h2 className="text-3xl sm:text-5xl 2xl:text-6xl font-extrabold font-heading text-white tracking-tight leading-tight">
+            <h2 className="text-3xl sm:text-5xl 2xl:text-6xl font-extrabold font-heading text-slate-50 tracking-tight leading-tight">
               Featured <span className="text-gradient-purple">Innovtec Platforms</span>
             </h2>
             <p className="mt-3 text-base sm:text-lg text-slate-300 max-w-2xl leading-relaxed">
@@ -159,7 +159,7 @@ export const ProductsSection: React.FC = () => {
                     <img
                       src={screenshotUrl}
                       alt={product.name}
-                      className="w-full h-full object-cover object-top filter brightness-90 contrast-105 group-hover:scale-105 group-hover:brightness-100 transition-all duration-700"
+                      className="w-full h-full object-cover object-top filter brightness-[0.85] group-hover:brightness-95 group-hover:scale-105 transition-all duration-700"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-space-950 via-space-950/30 to-transparent" />
                     
@@ -177,7 +177,7 @@ export const ProductsSection: React.FC = () => {
                   {/* 3. Product Info & Metrics */}
                   <div className="p-6 sm:p-8 space-y-5">
                     <div>
-                      <h3 className="text-2xl sm:text-3xl font-extrabold font-heading text-white group-hover:text-purple-300 transition-colors">
+                      <h3 className="text-2xl sm:text-3xl font-extrabold font-heading text-slate-50 group-hover:text-purple-300 transition-colors">
                         {product.name}
                       </h3>
                       <p className="text-xs sm:text-sm font-mono text-slate-400 mt-1">

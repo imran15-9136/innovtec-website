@@ -45,7 +45,7 @@ export const WhyInnovtecSection: React.FC = () => {
           <Badge variant="blue" className="mb-4">
             Why Technology Leaders Choose Us
           </Badge>
-          <h2 className="text-3xl sm:text-5xl font-extrabold font-heading text-white tracking-tight">
+          <h2 className="text-3xl sm:text-5xl font-extrabold font-heading text-slate-50 tracking-tight">
             The <span className="text-gradient-blue">Innovtec Advantage</span>
           </h2>
           <p className="mt-4 text-base sm:text-lg text-slate-300">
@@ -65,7 +65,7 @@ export const WhyInnovtecSection: React.FC = () => {
                   <IconComp className="w-6 h-6" />
                 </div>
                 <div className="space-y-2">
-                  <h3 className="text-xl font-bold font-heading text-white">
+                  <h3 className="text-xl font-bold font-heading text-slate-100">
                     {p.title}
                   </h3>
                   <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">

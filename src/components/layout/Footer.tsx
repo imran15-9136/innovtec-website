@@ -58,7 +58,7 @@ export const Footer: React.FC = () => {
                 <MapPin className="w-4 h-4 text-brand-cyan shrink-0 mt-0.5" />
                 <div className="space-y-1">
                   <div>
-                    <span className="text-slate-300 font-medium">Head Office:</span> House 26/A, Level 4,5, Uttara, Dhaka – 1230
+                    <span className="text-slate-300 font-medium">Head Office:</span> Sunrise Plaza (4th Floor), Lalmatia Block-A, Mirpur Road, Dhaka, Bangladesh, 1207
                   </div>
                   <div className="text-[11px] text-slate-500">
                     <span className="text-slate-400 font-medium">UK Office:</span> Wellesley House, 102 Cranbrook Road, Ilford IG1 4NH, UK
@@ -115,7 +115,7 @@ export const Footer: React.FC = () => {
 
           {/* Column 1: Capabilities */}
           <div className="space-y-4">
-            <h4 className="text-xs font-semibold font-mono text-white uppercase tracking-wider">
+            <h4 className="text-xs font-semibold font-mono text-slate-200 uppercase tracking-wider">
               Capabilities
             </h4>
             <ul className="space-y-2.5 text-xs text-slate-400">
@@ -164,7 +164,7 @@ export const Footer: React.FC = () => {
 
           {/* Column 2: Products & Trust */}
           <div className="space-y-4">
-            <h4 className="text-xs font-semibold font-mono text-white uppercase tracking-wider">
+            <h4 className="text-xs font-semibold font-mono text-slate-200 uppercase tracking-wider">
               Products & Trust
             </h4>
             <ul className="space-y-2.5 text-xs text-slate-400">
@@ -213,7 +213,7 @@ export const Footer: React.FC = () => {
 
           {/* Column 3: Company & Legal */}
           <div className="space-y-4">
-            <h4 className="text-xs font-semibold font-mono text-white uppercase tracking-wider">
+            <h4 className="text-xs font-semibold font-mono text-slate-200 uppercase tracking-wider">
               Company & Legal
             </h4>
             <ul className="space-y-2.5 text-xs text-slate-400">

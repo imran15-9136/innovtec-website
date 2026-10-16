@@ -52,11 +52,11 @@ export const ServicesSection: React.FC = () => {
   };
 
   return (
-    <section className="py-24 sm:py-28 bg-[#040711] relative overflow-hidden">
+    <section className="py-24 sm:py-28 bg-[#0A1220] relative overflow-hidden">
       
       {/* Background ambient lighting */}
-      <div className="absolute top-1/2 left-0 w-96 h-96 bg-brand-blue/10 rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute bottom-10 right-0 w-96 h-96 bg-brand-cyan/10 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-1/2 left-0 w-96 h-96 bg-brand-blue/6 rounded-full blur-[160px] pointer-events-none" />
+      <div className="absolute bottom-10 right-0 w-96 h-96 bg-brand-cyan/6 rounded-full blur-[160px] pointer-events-none" />
 
       <div className="w-full max-w-[1780px] 2xl:max-w-[1920px] mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 2xl:px-20 relative z-10">
         
@@ -67,7 +67,7 @@ export const ServicesSection: React.FC = () => {
               <Sparkles className="w-3.5 h-3.5" />
               <span>Full-Lifecycle Engineering Practices</span>
             </div>
-            <h2 className="text-3xl sm:text-5xl 2xl:text-6xl font-extrabold font-heading text-white tracking-tight leading-tight">
+            <h2 className="text-3xl sm:text-5xl 2xl:text-6xl font-extrabold font-heading text-slate-50 tracking-tight leading-tight">
               Enterprise <span className="text-gradient-cyan">Engineering Practices</span>
             </h2>
             <p className="mt-3 text-base sm:text-lg text-slate-300 max-w-2xl leading-relaxed">
@@ -104,7 +104,7 @@ export const ServicesSection: React.FC = () => {
                 </div>
 
                 {/* Title */}
-                <h3 className="text-xl font-bold font-heading text-white group-hover:text-brand-cyan transition-colors mb-2.5">
+                <h3 className="text-xl font-bold font-heading text-slate-100 group-hover:text-brand-cyan transition-colors mb-2.5">
                   {svc.title}
                 </h3>
 

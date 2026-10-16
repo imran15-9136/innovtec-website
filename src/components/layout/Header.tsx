@@ -45,6 +45,11 @@ export const Header: React.FC = () => {
   };
 
   useEffect(() => {
+    setServicesDropdown(false);
+    setMobileMenuOpen(false);
+  }, [pathname]);
+
+  useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
     };
@@ -81,12 +86,16 @@ export const Header: React.FC = () => {
     return null;
   }
 
+  const isHomePage = pathname === "/";
+
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ${
-        isScrolled
-          ? "bg-space-950/85 backdrop-blur-2xl border-b border-white/[0.06] shadow-2xl shadow-space-950/60 py-3"
-          : "bg-transparent py-5"
+      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
+        isHomePage
+          ? isScrolled
+            ? "bg-space-950/95 backdrop-blur-2xl border-b border-white/[0.08] shadow-2xl shadow-space-950/70 py-3 sm:py-3.5"
+            : "bg-space-950/40 backdrop-blur-md border-b border-white/[0.04] py-4 sm:py-5"
+          : "bg-space-950/95 backdrop-blur-2xl border-b border-white/[0.08] shadow-2xl shadow-space-950/70 py-3 sm:py-3.5"
       }`}
     >
       <div className="w-full max-w-[1800px] 2xl:max-w-[1920px] mx-auto px-4 sm:px-8 lg:px-12 xl:px-16">
@@ -114,12 +123,7 @@ export const Header: React.FC = () => {
                   >
                     <Link
                       href={link.href}
-                      onClick={(e) => {
-                        // Allow clicking to toggle menu on touch / click
-                        if (window.innerWidth >= 1024) {
-                          setServicesDropdown((prev) => !prev);
-                        }
-                      }}
+                      onClick={() => setServicesDropdown(false)}
                       className={`flex items-center gap-1 px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${
                         pathname.startsWith("/services")
                           ? "text-white bg-white/[0.06]"

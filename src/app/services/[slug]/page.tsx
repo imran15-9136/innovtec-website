@@ -37,7 +37,7 @@ export default function ServiceDetailPage() {
   }
 
   return (
-    <div className="pt-28 pb-20 bg-[#040711] min-h-screen text-white">
+    <div className="pt-36 sm:pt-40 pb-24 bg-[#040711] min-h-screen text-white">
       <div className="w-full max-w-[1780px] 2xl:max-w-[1920px] mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 2xl:px-20">
         
         {/* Back Link */}

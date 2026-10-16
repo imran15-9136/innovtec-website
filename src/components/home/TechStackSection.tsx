@@ -16,7 +16,7 @@ export const TechStackSection: React.FC = () => {
           <Badge variant="purple" className="mb-4">
             Modern Stack Matrix
           </Badge>
-          <h2 className="text-3xl sm:text-5xl font-extrabold font-heading text-white tracking-tight">
+          <h2 className="text-3xl sm:text-5xl font-extrabold font-heading text-slate-50 tracking-tight">
             Battle-Tested <span className="text-gradient-purple">Technologies</span>
           </h2>
           <p className="mt-4 text-base sm:text-lg text-slate-300">

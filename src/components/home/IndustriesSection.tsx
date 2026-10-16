@@ -118,10 +118,10 @@ export const IndustriesSection: React.FC = () => {
   const current = industries[activeTab];
 
   return (
-    <section className="py-24 sm:py-28 bg-[#030610] border-t border-white/[0.06] relative overflow-hidden">
+    <section className="py-24 sm:py-28 bg-[#090F1E] border-t border-white/[0.05] relative overflow-hidden">
       
       {/* Soft ambient lighting */}
-      <div className="absolute top-1/4 right-1/4 w-[500px] h-[500px] bg-brand-cyan/10 rounded-full blur-[160px] pointer-events-none" />
+      <div className="absolute top-1/4 right-1/4 w-[500px] h-[500px] bg-brand-cyan/6 rounded-full blur-[180px] pointer-events-none" />
 
       <div className="w-full max-w-[1780px] 2xl:max-w-[1920px] mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 2xl:px-20 relative z-10">
         
@@ -131,7 +131,7 @@ export const IndustriesSection: React.FC = () => {
             <Sparkles className="w-3.5 h-3.5" />
             <span>Vertical Domain Specialization</span>
           </div>
-          <h2 className="text-3xl sm:text-5xl font-extrabold font-heading text-white tracking-tight">
+          <h2 className="text-3xl sm:text-5xl font-extrabold font-heading text-slate-50 tracking-tight">
             High-Impact Engineering for <span className="text-gradient-cyan">Target Sectors</span>
           </h2>
           <p className="mt-3 text-base sm:text-lg text-slate-300">
@@ -171,7 +171,7 @@ export const IndustriesSection: React.FC = () => {
               <span>{current.name} Vertical Architecture</span>
             </div>
 
-            <h3 className="text-2xl sm:text-4xl font-extrabold font-heading text-white leading-tight">
+            <h3 className="text-2xl sm:text-4xl font-extrabold font-heading text-slate-50 leading-tight">
               {current.tagline}
             </h3>
 

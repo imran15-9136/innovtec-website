@@ -42,7 +42,7 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="pt-28 pb-20 bg-space-950 min-h-screen">
+    <div className="pt-36 sm:pt-40 pb-24 bg-space-950 min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
         
         <div className="text-center max-w-3xl mx-auto space-y-4">
@@ -159,7 +159,7 @@ export default function ContactPage() {
                   <div className="text-xs font-mono font-bold text-purple-400 uppercase">Bangladesh Head Office</div>
                   <div className="text-sm font-bold text-white font-heading">Dhaka Office</div>
                   <div className="text-xs text-slate-300 leading-relaxed">
-                    House 26/A, Level 4,5,<br />Uttara, Dhaka – 1230
+                    Sunrise Plaza (4th Floor), Lalmatia Block-A,<br />Mirpur Road, Dhaka, Bangladesh, 1207
                   </div>
                   <div className="pt-2 text-xs text-brand-cyan font-mono">+880 1773-893339</div>
                 </div>

@@ -16,7 +16,7 @@ export default function PortfolioPage() {
     : CASE_STUDIES.filter((cs) => cs.clientIndustry === industry);
 
   return (
-    <div className="pt-28 pb-20 bg-space-950 min-h-screen">
+    <div className="pt-36 sm:pt-40 pb-24 bg-space-950 min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">

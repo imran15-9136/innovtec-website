@@ -26,7 +26,7 @@ export const PortfolioSection: React.FC = () => {
             <Badge variant="emerald" className="mb-4">
               Proven Enterprise ROI
             </Badge>
-            <h2 className="text-3xl sm:text-5xl font-extrabold font-heading text-white tracking-tight">
+            <h2 className="text-3xl sm:text-5xl font-extrabold font-heading text-slate-50 tracking-tight">
               Featured <span className="text-gradient-blue">Case Studies</span>
             </h2>
             <p className="mt-4 text-base text-slate-300 max-w-xl">
@@ -77,7 +77,7 @@ export const PortfolioSection: React.FC = () => {
                 </div>
 
                 <div className="p-6 space-y-4">
-                  <h3 className="text-xl font-bold font-heading text-white group-hover:text-brand-cyan transition-colors leading-snug">
+                  <h3 className="text-xl font-bold font-heading text-slate-100 group-hover:text-brand-cyan transition-colors leading-snug">
                     {cs.title}
                   </h3>
 
